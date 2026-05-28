@@ -88,13 +88,13 @@ export const ParticleField: React.FC = () => {
                 ease: "easeInOut",
                 repeat: Infinity,
               }}
-              className="absolute rounded-full bg-white dark:bg-white/80"
+              className="absolute rounded-full bg-forest-accent/70 dark:bg-forest-accent-light/80"
               style={{
                 width: el.size,
                 height: el.size,
                 top: `${el.top}%`,
                 left: `${el.left}%`,
-                boxShadow: "0 0 6px rgba(255,255,255,0.7)",
+                boxShadow: "0 0 6px rgba(61,153,112,0.6)",
               }}
             />
           );

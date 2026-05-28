@@ -5,7 +5,7 @@ import { Sun, Moon } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const ThemeToggle: React.FC = () => {
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
+  const [theme, setTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
     // Safely sync with document.documentElement on mounting

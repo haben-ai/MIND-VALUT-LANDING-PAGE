@@ -3,12 +3,9 @@
 import React, { useEffect, useRef } from "react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Hero } from "@/components/sections/Hero";
-import { StatsBar } from "@/components/sections/StatsBar";
-import { Problem } from "@/components/sections/Problem";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Features } from "@/components/sections/Features";
 import { Platforms } from "@/components/sections/Platforms";
-import { Testimonials } from "@/components/sections/Testimonials";
 import { Waitlist } from "@/components/sections/Waitlist";
 import { FAQ } from "@/components/sections/FAQ";
 import { Footer } from "@/components/sections/Footer";
@@ -53,12 +50,9 @@ export default function Home() {
       {/* Main Page Layout Sections in Exact Order */}
       <main>
         <Hero />
-        <StatsBar />
-        <Problem />
         <HowItWorks />
         <Features />
         <Platforms />
-        <Testimonials />
         <Waitlist />
         <FAQ />
       </main>

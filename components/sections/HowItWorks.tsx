@@ -50,60 +50,49 @@ export const HowItWorks: React.FC = () => {
           </h2>
         </ScrollAnimate>
 
-        {/* Process Timeline Column */}
-        <div className="flex flex-col gap-24 md:gap-36 max-w-4xl mx-auto relative">
-          
-          {/* Connector Line decoration for timeline */}
-          <div className="hidden md:block absolute top-[60px] bottom-[60px] left-1/2 -translate-x-1/2 w-[1px] bg-forest-border/20 z-0 pointer-events-none" />
-
+        {/* 3-Column Side-by-Side Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 max-w-6xl mx-auto relative">
           {STEPS.map((step, idx) => {
             const Icon = step.icon;
             const MockupComponent = step.mockup;
-            const isEven = idx % 2 === 0;
 
             return (
-              <div
+              <ScrollAnimate
                 key={step.number}
-                className={`flex flex-col md:flex-row items-center gap-12 lg:gap-20 z-10 ${
-                  isEven ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
+                delay={idx * 0.15}
+                className="flex flex-col items-center text-center bg-forest-surface-2/30 border border-forest-border/10 rounded-3xl p-6 lg:p-8 relative overflow-hidden backdrop-blur-md hover:border-forest-accent/30 hover:bg-forest-surface-2/55 hover:shadow-2xl transition-all duration-500 group"
               >
-                {/* Text Description Block */}
-                <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left relative">
-                  {/* Step number absolute overlay background */}
-                  <div className="absolute top-[-35px] left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 text-7xl md:text-8xl font-black text-forest-accent/[0.05] select-none z-0">
-                    {step.number}
-                  </div>
+                {/* Floating soft neon highlight glow inside card */}
+                <div className="absolute inset-x-0 bottom-[-50px] h-[120px] rounded-full bg-forest-accent/5 blur-3xl group-hover:bg-forest-accent/15 transition-all duration-500 pointer-events-none" />
 
-                  {/* Icon Circle */}
-                  <div className="relative z-10 h-14 w-14 rounded-full bg-forest-accent/10 border border-forest-accent/30 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(61,153,112,0.15)] group-hover:border-forest-accent/60 transition-all duration-300">
-                    <Icon className="h-6 w-6 text-forest-accent-light" />
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="relative z-10 text-xl md:text-2xl font-bold text-forest-text-primary mb-3">
-                    {step.title}
-                  </h3>
-
-                  {/* Body */}
-                  <p className="relative z-10 text-sm sm:text-base text-forest-text-secondary leading-relaxed max-w-md">
-                    {step.body}
-                  </p>
+                {/* Step number large background watermark */}
+                <div className="absolute top-4 right-6 text-6xl font-black text-forest-accent/[0.04] select-none pointer-events-none group-hover:text-forest-accent/[0.07] transition-all duration-300">
+                  {step.number}
                 </div>
 
-                {/* Screenshot Mockup Block */}
-                <ScrollAnimate
-                  delay={0.1}
-                  className="flex-1 flex justify-center w-full max-w-[270px] sm:max-w-none"
-                >
-                  <div className="relative group">
-                    {/* Pulsing neon highlight glow behind card */}
-                    <div className="absolute inset-0 rounded-2xl bg-forest-accent/15 blur-2xl group-hover:bg-forest-accent/25 transition-all duration-500 opacity-60 pointer-events-none" />
-                    
+                {/* Icon Circle */}
+                <div className="h-12 w-12 rounded-full bg-forest-accent/10 border border-forest-accent/20 flex items-center justify-center mb-5 shadow-[0_0_12px_rgba(61,153,112,0.1)] group-hover:border-forest-accent/50 transition-all duration-300">
+                  <Icon className="h-5 w-5 text-forest-accent-light" />
+                </div>
+
+                {/* Step Title */}
+                <h3 className="text-lg font-bold text-forest-text-primary mb-2">
+                  {step.title}
+                </h3>
+
+                {/* Step Body */}
+                <p className="text-xs sm:text-sm text-forest-text-secondary leading-relaxed mb-8 max-w-[280px]">
+                  {step.body}
+                </p>
+
+                {/* Mockup Component */}
+                <div className="w-full flex justify-center mt-auto transform scale-[0.92] lg:scale-[0.98] group-hover:scale-[1.04] transition-transform duration-500">
+                  <div className="relative">
+                    <div className="absolute inset-0 rounded-2xl bg-forest-accent/8 blur-xl group-hover:bg-forest-accent/15 transition-all duration-500 opacity-60 pointer-events-none" />
                     <MockupComponent />
                   </div>
-                </ScrollAnimate>
-              </div>
+                </div>
+              </ScrollAnimate>
             );
           })}
         </div>

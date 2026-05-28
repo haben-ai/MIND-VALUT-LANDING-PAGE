@@ -8,15 +8,15 @@
     --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     
     /* Light Mode (Default Root) */
-    --base-color: #F3F7F4;
-    --surface-color: #E6ECE8;
-    --surface-color-2: #DBE4DF;
-    --surface-color-3: #D0DBD4;
-    --border-color: rgba(46, 107, 62, 0.2);
-    --border-subtle-color: rgba(46, 107, 62, 0.08);
-    --text-primary-color: #0A1208;
-    --text-secondary-color: #2F483A;
-    --text-muted-color: #5E7A6B;
+    --base-color: #FFFFFF;
+    --surface-color: #FAFCFB;
+    --surface-color-2: #F1F4F2;
+    --surface-color-3: #E6ECE9;
+    --border-color: rgba(46, 107, 62, 0.15);
+    --border-subtle-color: rgba(46, 107, 62, 0.06);
+    --text-primary-color: #09110B;
+    --text-secondary-color: #2E4739;
+    --text-muted-color: #5B7567;
   }
 
   .dark {

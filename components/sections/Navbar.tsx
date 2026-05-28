@@ -119,7 +119,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-[#0E1A12] pt-20 flex flex-col md:hidden animate-fade-in">
+        <div className="fixed inset-0 z-40 bg-forest-base pt-20 flex flex-col md:hidden animate-fade-in">
           <div className="flex flex-col items-center gap-6 py-10 px-6">
             <button
               onClick={() => scrollToSection("how-it-works")}

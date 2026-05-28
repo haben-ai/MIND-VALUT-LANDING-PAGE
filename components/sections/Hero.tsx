@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { Badge } from "../ui/Badge";
 import { GlowButton } from "../ui/GlowButton";
@@ -9,6 +9,8 @@ import { PhoneMockup } from "../ui/PhoneMockup";
 import { BrowserMockup } from "../ui/BrowserMockup";
 import { ParticleField } from "../ui/ParticleField";
 import { AnimatedCounter } from "../ui/AnimatedCounter";
+import { WaitlistForm } from "../ui/WaitlistForm";
+import { SuccessState } from "../ui/SuccessState";
 
 const PLATFORMS = [
   { name: "Instagram", color: "#E1306C" },
@@ -20,10 +22,19 @@ const PLATFORMS = [
 
 export const Hero: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [submission, setSubmission] = useState<{
+    firstName: string;
+    email: string;
+    position: number;
+  } | null>(null);
 
   useEffect(() => {
     setIsLoaded(true);
   }, []);
+
+  const handleSuccess = (data: { firstName: string; email: string; position: number }) => {
+    setSubmission(data);
+  };
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -59,7 +70,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-[100vh] flex flex-col items-center justify-center bg-gradient-hero overflow-hidden pt-28 pb-20 select-none">
+    <section className="relative min-h-[100vh] flex flex-col items-center justify-center bg-forest-base overflow-hidden pt-28 pb-20 select-none">
       {/* LAYER 1: Radial Glow (Visual Effect 2 - Saturated Neon) + Dot Grid Pattern (Visual Effect 3) */}
       <div
         className="absolute inset-0 z-0 bg-gradient-radial-glow pointer-events-none"
@@ -131,7 +142,7 @@ export const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={isLoaded ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex items-center flex-wrap justify-center xl:justify-start gap-2.5 mb-10 w-full"
+            className="flex items-center flex-wrap justify-center xl:justify-start gap-2.5 mb-8 w-full"
           >
             {PLATFORMS.map((platform, idx) => (
               <React.Fragment key={platform.name}>
@@ -151,29 +162,46 @@ export const Hero: React.FC = () => {
             ))}
           </motion.div>
 
-          {/* CTA buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="flex flex-col sm:flex-row items-center gap-6 mb-8 w-full sm:w-auto"
-          >
-            <GlowButton
-              onClick={() => scrollToSection("waitlist")}
-              className="group w-full sm:w-auto px-8 py-4 text-base font-semibold"
-            >
-              Join the waitlist
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 duration-300" />
-            </GlowButton>
-
-            <button
-              onClick={() => scrollToSection("how-it-works")}
-              className="text-sm font-semibold text-forest-text-muted hover:text-forest-text-primary hover:underline transition-all py-2 cursor-pointer flex items-center gap-1.5 group"
-            >
-              See how it works
-              <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5 duration-300" />
-            </button>
-          </motion.div>
+          {/* Inline Waitlist Dialog / Form on the very top */}
+          <div className="w-full max-w-[480px] mb-8 z-20">
+            <AnimatePresence mode="wait">
+              {!submission ? (
+                <motion.div
+                  key="hero-waitlist-form"
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.4 }}
+                  className="w-full text-left"
+                >
+                  <WaitlistForm onSuccess={handleSuccess} />
+                  <div className="mt-4 flex justify-center xl:justify-start">
+                    <button
+                      onClick={() => scrollToSection("how-it-works")}
+                      className="text-xs font-semibold text-forest-text-muted hover:text-forest-text-primary hover:underline transition-all py-1 cursor-pointer flex items-center gap-1 group"
+                    >
+                      See how it works
+                      <ArrowDown className="h-3.5 w-3.5 transition-transform group-hover:translate-y-0.5 duration-300" />
+                    </button>
+                  </div>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="hero-waitlist-success"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4 }}
+                  className="w-full text-left bg-forest-surface-2/20 border border-forest-border/10 rounded-3xl p-6 backdrop-blur-md"
+                >
+                  <SuccessState
+                    firstName={submission.firstName}
+                    email={submission.email}
+                    position={submission.position}
+                  />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
 
           {/* Social Proof Queue count */}
           <motion.div
