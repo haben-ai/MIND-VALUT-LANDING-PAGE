@@ -190,7 +190,7 @@ export const LibraryMockup: React.FC = () => {
           </div>
           <div>
             <h5 className="text-[9px] font-semibold text-forest-text-primary">Marketing Inspo</h5>
-            <p className="text-[6px] text-forest-text-muted">Contains "cold email"</p>
+            <p className="text-[6px] text-forest-text-muted">Contains &ldquo;cold email&rdquo;</p>
           </div>
         </motion.div>
 
