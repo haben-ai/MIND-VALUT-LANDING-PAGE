@@ -47,7 +47,7 @@ export async function POST(request: Request) {
         return NextResponse.json(
           {
             error: "already_registered",
-            position: existing.position,
+            position: existing.position + 100,
             firstName: existing.first_name,
           },
           { status: 409 }
@@ -75,7 +75,7 @@ export async function POST(request: Request) {
         return NextResponse.json({ error: "server_error" }, { status: 500 });
       }
 
-      position = inserted.position;
+      position = inserted.position + 100;
     } else {
       // MOCK FALLBACK MODE
       console.log("⚠️ Supabase not configured. Using in-memory fallback waitlist database.");
@@ -85,7 +85,7 @@ export async function POST(request: Request) {
         return NextResponse.json(
           {
             error: "already_registered",
-            position: existing.position,
+            position: existing.position + 100,
             firstName: existing.firstName,
           },
           { status: 409 }
@@ -93,12 +93,12 @@ export async function POST(request: Request) {
       }
 
       mockWaitlistCount += 1;
-      position = mockWaitlistCount;
+      position = mockWaitlistCount + 100;
 
       mockDb.set(cleanEmail, {
         email: cleanEmail,
         firstName: cleanFirstName,
-        position: position,
+        position: position - 100,
       });
     }
 
@@ -161,7 +161,7 @@ export async function POST(request: Request) {
     if (isResendConfigured && resend) {
       try {
         await resend.emails.send({
-          from: "Vora <hello@vora.app>",
+          from: "Vora <onboarding@resend.dev>",
           to: cleanEmail,
           subject: `You're #${position} on the Vora waitlist ✦`,
           html: emailHtml,
