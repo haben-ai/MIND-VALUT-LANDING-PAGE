@@ -7,7 +7,6 @@ import { Badge } from "../ui/Badge";
 import { GlowButton } from "../ui/GlowButton";
 import { PhoneMockup } from "../ui/PhoneMockup";
 import { BrowserMockup } from "../ui/BrowserMockup";
-import { ParticleField } from "../ui/ParticleField";
 import { AnimatedCounter } from "../ui/AnimatedCounter";
 import { WaitlistForm } from "../ui/WaitlistForm";
 import { SuccessState } from "../ui/SuccessState";
@@ -87,8 +86,7 @@ export const Hero: React.FC = () => {
         }}
       />
 
-      {/* LAYER 2: Twinkling Space Stars + Intelligence Nodes */}
-      <ParticleField />
+      {/* LAYER 2: ContentRain covers globally in layout, so we do not render abstract particles here */}
 
       {/* LAYER 3: Hero Content */}
       <div className="relative z-10 max-w-[1200px] w-full mx-auto px-6 md:px-12 flex flex-col xl:flex-row items-center gap-16">
@@ -117,7 +115,10 @@ export const Hero: React.FC = () => {
                 </motion.span>
               ))}
             </span>
-            <span className="block overflow-hidden bg-gradient-to-r from-forest-accent via-forest-accent-light to-forest-highlight bg-clip-text text-transparent pb-1">
+            <span
+              className="block overflow-hidden bg-gradient-to-r from-forest-accent via-forest-accent-light to-forest-highlight bg-clip-text text-transparent pb-1"
+              style={{ filter: "drop-shadow(0 0 20px rgba(61,153,112,0.3))" }}
+            >
               {line2Words.map((word, idx) => (
                 <motion.span key={idx} variants={wordVariant} className="inline-block mr-[0.2em]">
                   {word}

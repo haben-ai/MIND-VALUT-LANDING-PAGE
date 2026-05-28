@@ -12,24 +12,20 @@ export const GlassCard = React.forwardRef<HTMLDivElement, GlassCardProps>(
       <div
         ref={ref}
         className={cn(
-          "rounded-lg overflow-hidden backdrop-blur-[12px] transition-all duration-300",
-          // Glassmorphism border and background (Visual Effect 4)
+          "rounded-3xl overflow-hidden transition-all duration-200 select-none",
+          // Duolingo-Style 3D Card Borders and Fills
           {
-            "bg-forest-surface-2/60 border border-forest-border/50 shadow-glass-card":
+            "bg-forest-surface border-2 border-forest-border border-b-[6px] shadow-md":
               tint === "standard",
-            "bg-[#1E0A0A]/60 border border-red-500/30 shadow-[0_0_0_0.5px_rgba(239,68,68,0.3),0_8px_32px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(239,68,68,0.1)]":
+            "bg-red-500/5 dark:bg-red-950/10 border-2 border-red-500/30 border-b-[6px] shadow-md":
               tint === "red",
-            "bg-forest-surface-2/60 border border-forest-accent/50 shadow-[0_0_0_0.5px_rgba(61,153,112,0.3),0_8px_32px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(90,184,138,0.1)]":
+            "bg-forest-accent/5 border-2 border-forest-accent border-b-[6px] shadow-md":
               tint === "green",
           },
-          // Hover effects if enabled
+          // Tactile Hover effects if enabled
           {
-            "hover:border-forest-accent/60 hover:-translate-y-1 hover:shadow-[0_0_0_0.5px_rgba(61,153,112,0.5),0_12px_40px_rgba(0,0,0,0.5)]":
-              hoverEffect && tint === "standard",
-            "hover:border-red-500/50 hover:-translate-y-1":
-              hoverEffect && tint === "red",
-            "hover:border-forest-accent/80 hover:-translate-y-1":
-              hoverEffect && tint === "green",
+            "hover:-translate-y-1 hover:brightness-[1.01] active:translate-y-[2px] active:border-b-[3px]":
+              hoverEffect,
           },
           className
         )}

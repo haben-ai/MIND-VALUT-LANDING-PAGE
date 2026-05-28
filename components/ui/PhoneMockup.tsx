@@ -22,16 +22,38 @@ export const PhoneMockup: React.FC = () => {
       }}
       className="relative mx-auto"
     >
+      {/* Background glow shadow behind the device */}
+      <div 
+        className="absolute inset-6 bg-forest-accent/20 rounded-[32px] blur-[40px] pointer-events-none z-0" 
+        style={{
+          transform: "perspective(1200px) rotateX(12deg) rotateY(-16deg) scale(0.95)",
+        }}
+      />
+
+      {/* Base reflection element */}
+      <div
+        className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[85%] h-12 bg-gradient-to-t from-transparent via-forest-accent/15 to-forest-accent/40 rounded-full blur-[20px] pointer-events-none opacity-60 z-0"
+        style={{
+          transform: "perspective(1200px) rotateX(80deg) rotateY(0deg) scale(1.1)",
+        }}
+      />
+
       {/* 3D angled container (Visual Effect 5: transform tilt) */}
       <div
-        className="w-[230px] sm:w-[260px] h-[480px] sm:h-[530px] rounded-[32px] bg-forest-surface border-[1.5px] border-forest-border/50 shadow-phone-mock overflow-hidden flex flex-col p-3 pb-4 select-none"
+        className="w-[230px] sm:w-[260px] h-[480px] sm:h-[530px] rounded-[32px] bg-forest-surface border-[1.5px] border-forest-border/50 overflow-hidden flex flex-col p-3 pb-4 select-none relative z-10"
         style={{
-          transform: "perspective(1000px) rotateX(8deg) rotateY(-12deg)",
+          transform: "perspective(1200px) rotateX(12deg) rotateY(-16deg) rotateZ(2deg)",
           transformStyle: "preserve-3d",
+          boxShadow: `
+            0 0 0 1px rgba(61, 153, 112, 0.25),
+            0 25px 60px rgba(0, 0, 0, 0.7),
+            0 0 50px rgba(61, 153, 112, 0.25),
+            inset 0 1px 0 rgba(255, 255, 255, 0.15)
+          `
         }}
       >
         {/* Screen Bezel Frame Inside shadow */}
-        <div className="absolute inset-0 border border-forest-accent/10 rounded-[32px] pointer-events-none z-30" />
+        <div className="absolute inset-0 border border-forest-accent/20 rounded-[32px] pointer-events-none z-30" />
 
         {/* Status Bar */}
         <div className="flex items-center justify-between text-[9px] text-forest-text-muted px-2 pt-1 pb-2">

@@ -3,12 +3,16 @@
 import React, { useEffect, useRef } from "react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Hero } from "@/components/sections/Hero";
+import { StatsBar } from "@/components/sections/StatsBar";
+import { Problem } from "@/components/sections/Problem";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Features } from "@/components/sections/Features";
 import { Platforms } from "@/components/sections/Platforms";
+import { Testimonials } from "@/components/sections/Testimonials";
 import { Waitlist } from "@/components/sections/Waitlist";
 import { FAQ } from "@/components/sections/FAQ";
 import { Footer } from "@/components/sections/Footer";
+import { ContentRain } from "@/components/ui/ContentRain";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -49,10 +53,26 @@ export default function Home() {
 
       {/* Main Page Layout Sections in Exact Order */}
       <main>
-        <Hero />
-        <HowItWorks />
-        <Features />
-        <Platforms />
+        {/* Relative Container that spans from top of Hero to top of Waitlist for the ContentRain */}
+        <div className="relative w-full overflow-hidden">
+          <ContentRain />
+          <Hero />
+          <StatsBar />
+          
+          {/* Smooth transition from hero/statsbar to problem */}
+          <div className="h-[120px] w-full bg-gradient-to-b from-[#0A1208] to-[#0E1A12] pointer-events-none relative z-0" />
+          
+          <Problem />
+          <HowItWorks />
+          <Features />
+          <Platforms />
+          
+          {/* Smooth transition from platforms to testimonials */}
+          <div className="h-[120px] w-full bg-gradient-to-b from-[#0A1208] to-[#0E1A12] pointer-events-none relative z-0" />
+          
+          <Testimonials />
+        </div>
+        
         <Waitlist />
         <FAQ />
       </main>

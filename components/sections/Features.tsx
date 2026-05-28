@@ -81,8 +81,8 @@ export const Features: React.FC = () => {
                   <div>
                     {/* Icon & Badge row */}
                     <div className="flex items-center justify-between mb-6">
-                      <div className="h-10 w-10 rounded-lg bg-forest-accent/15 border border-forest-accent/30 flex items-center justify-center shadow-[0_0_10px_rgba(61,153,112,0.1)]">
-                        <Icon className="h-5 w-5 text-forest-accent-light" />
+                      <div className="h-11 w-11 rounded-2xl bg-forest-accent/10 border-2 border-forest-border flex items-center justify-center shadow-sm">
+                        <Icon className="h-5 w-5 text-forest-accent" />
                       </div>
                       {feature.badge && (
                         <Badge variant={feature.badge.variant} className="text-[10px] py-0.5">
@@ -92,7 +92,7 @@ export const Features: React.FC = () => {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-lg md:text-xl font-semibold text-forest-text-primary mb-3">
+                    <h3 className="text-lg md:text-xl font-bold text-forest-text-primary mb-3">
                       {feature.title}
                     </h3>
 
@@ -109,15 +109,15 @@ export const Features: React.FC = () => {
 
         {/* Bottom Full Width Card V2 AI Chat simulation */}
         <ScrollAnimate delay={0.3} className="w-full mt-6">
-          <div className="rounded-2xl bg-gradient-to-br from-forest-surface-2 to-forest-surface-3/50 border border-forest-accent/30 p-6 md:p-10 shadow-2xl relative overflow-hidden flex flex-col lg:flex-row items-center gap-10">
+          <div className="rounded-3xl bg-forest-surface border-2 border-forest-border border-b-[6px] p-6 md:p-10 shadow-lg relative overflow-hidden flex flex-col lg:flex-row items-center gap-10">
             {/* Soft grid/particles background inside the container */}
-            <div className="absolute inset-0 bg-forest-accent/[0.02] pointer-events-none z-0" />
+            <div className="absolute inset-0 bg-forest-accent/[0.01] pointer-events-none z-0" />
             <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-forest-accent/5 rounded-full blur-[100px] pointer-events-none z-0" />
 
             {/* Left Content */}
             <div className="flex-1 relative z-10 text-center lg:text-left">
-              <span className="font-label text-forest-accent-light text-xs font-bold tracking-widest uppercase mb-3.5 block flex items-center justify-center lg:justify-start gap-1.5">
-                <Sparkles className="h-3.5 w-3.5 text-forest-accent-light animate-pulse-subtle" />
+              <span className="font-label text-forest-accent text-xs font-bold tracking-widest uppercase mb-3.5 block flex items-center justify-center lg:justify-start gap-1.5">
+                <Sparkles className="h-3.5 w-3.5 text-forest-accent animate-pulse-subtle" />
                 AI-POWERED · COMING SOON
               </span>
               <h3 className="text-2xl md:text-3xl font-bold text-forest-text-primary tracking-tight mb-4">
@@ -131,7 +131,7 @@ export const Features: React.FC = () => {
             </div>
 
             {/* Right: Fake Chat Interface Mockup */}
-            <div className="w-full lg:max-w-md relative z-10 bg-forest-base/60 backdrop-blur-md border border-forest-border/30 rounded-2xl p-4 shadow-xl flex flex-col gap-3.5">
+            <div className="w-full lg:max-w-md relative z-10 bg-forest-surface border-2 border-forest-border border-b-[6px] rounded-2xl p-4 shadow-md flex flex-col gap-3.5">
               {/* Chat Header */}
               <div className="flex items-center gap-2 border-b border-forest-border/10 pb-2.5">
                 <div className="h-5 w-5 rounded-full bg-forest-accent/20 border border-forest-accent flex items-center justify-center">

@@ -90,71 +90,89 @@ export const WaitlistForm: React.FC<WaitlistFormProps> = ({ onSuccess }) => {
 
   return (
     <form onSubmit={handleSubmit} className="w-full flex flex-col gap-6">
-      {/* Rotating Conic Border Wrapper (Visual Effect 6) */}
-      <div className="rotating-border-container shadow-2xl">
-        <div className="rotating-border-inner bg-forest-surface p-6 md:p-8 flex flex-col gap-4">
-          <div className="flex flex-col md:flex-row gap-4">
-            {/* First Name Input */}
-            <div className="flex-1">
-              <input
-                type="text"
-                placeholder="Your first name"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                disabled={loading}
-                className="w-full h-[52px] bg-forest-surface-2/80 border border-forest-border/40 hover:border-forest-border/60 focus:border-forest-accent rounded-xl px-4 text-forest-text-primary text-base font-normal placeholder-forest-text-muted focus:outline-none focus:ring-4 focus:ring-forest-accent/15 transition-all disabled:opacity-50"
-              />
-            </div>
-
-            {/* Email Input */}
-            <div className="flex-[2]">
-              <input
-                type="email"
-                placeholder="your@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                disabled={loading}
-                className="w-full h-[52px] bg-forest-surface-2/80 border border-forest-border/40 hover:border-forest-border/60 focus:border-forest-accent rounded-xl px-4 text-forest-text-primary text-base font-normal placeholder-forest-text-muted focus:outline-none focus:ring-4 focus:ring-forest-accent/15 transition-all disabled:opacity-50"
-              />
-            </div>
+      {/* Duolingo-Style 3D Slate Card Container */}
+      <div className="bg-white text-slate-900 border-2 border-b-[6px] border-slate-200 dark:bg-[#202F36] dark:text-white dark:border-[#3C4F58] p-6 md:p-8 rounded-3xl flex flex-col gap-5 shadow-xl relative z-10">
+        <div className="flex flex-col md:flex-row gap-4">
+          {/* First Name Input */}
+          <div className="relative flex-1">
+            <input
+              type="text"
+              id="firstName"
+              placeholder=" "
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              disabled={loading}
+              className="peer w-full h-[58px] pt-5 pb-1 px-4 bg-slate-50 border-2 border-slate-200 hover:border-slate-300 focus:border-forest-accent rounded-2xl text-black text-base font-bold focus:outline-none focus:ring-4 focus:ring-forest-accent/10 transition-all dark:bg-slate-900 dark:border-slate-700 dark:hover:border-slate-600 dark:focus:border-forest-accent dark:text-white disabled:opacity-50"
+            />
+            <label
+              htmlFor="firstName"
+              className="absolute left-4 top-[18px] text-slate-400 dark:text-slate-500 font-bold pointer-events-none transition-all duration-200 origin-left
+                peer-placeholder-shown:top-[18px] peer-placeholder-shown:scale-100
+                peer-focus:top-2 peer-focus:scale-75 peer-focus:text-forest-accent
+                peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:scale-75"
+            >
+              Your first name
+            </label>
           </div>
 
-          {/* Platform preferences checkboxes */}
-          <div className="mt-2">
-            <label className="block text-[11px] font-semibold tracking-widest text-forest-text-muted uppercase mb-3">
-              What do you mainly save from?
+          {/* Email Input */}
+          <div className="relative flex-[2]">
+            <input
+              type="email"
+              id="email"
+              placeholder=" "
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              disabled={loading}
+              className="peer w-full h-[58px] pt-5 pb-1 px-4 bg-slate-50 border-2 border-slate-200 hover:border-slate-300 focus:border-forest-accent rounded-2xl text-black text-base font-bold focus:outline-none focus:ring-4 focus:ring-forest-accent/10 transition-all dark:bg-slate-900 dark:border-slate-700 dark:hover:border-slate-600 dark:focus:border-forest-accent dark:text-white disabled:opacity-50"
+            />
+            <label
+              htmlFor="email"
+              className="absolute left-4 top-[18px] text-slate-400 dark:text-slate-500 font-bold pointer-events-none transition-all duration-200 origin-left
+                peer-placeholder-shown:top-[18px] peer-placeholder-shown:scale-100
+                peer-focus:top-2 peer-focus:scale-75 peer-focus:text-forest-accent
+                peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:scale-75"
+            >
+              your@email.com
             </label>
-            <div className="flex flex-wrap gap-2">
-              {PLATFORMS.map((platform) => {
-                const isSelected = selectedPlatforms.includes(platform.id);
-                return (
-                  <button
-                    key={platform.id}
-                    type="button"
-                    onClick={() => togglePlatform(platform.id)}
-                    disabled={loading}
-                    className={cn(
-                      "h-9 px-3.5 rounded-full text-xs font-semibold tracking-wide border transition-all active:scale-[0.98] cursor-pointer disabled:opacity-50",
-                      {
-                        "bg-forest-accent border-transparent text-white shadow-md":
-                          isSelected,
-                        "bg-transparent border-forest-border/50 text-forest-text-secondary hover:border-forest-accent/50 hover:text-forest-text-primary":
-                          !isSelected,
-                      }
-                    )}
-                  >
-                    {platform.label}
-                  </button>
-                );
-              })}
-            </div>
+          </div>
+        </div>
+
+        {/* Platform preferences checkboxes */}
+        <div className="mt-2">
+          <label className="block text-[11px] font-bold tracking-widest text-slate-500 dark:text-slate-400 uppercase mb-3">
+            What do you mainly save from?
+          </label>
+          <div className="flex flex-wrap gap-2">
+            {PLATFORMS.map((platform) => {
+              const isSelected = selectedPlatforms.includes(platform.id);
+              return (
+                <button
+                  key={platform.id}
+                  type="button"
+                  onClick={() => togglePlatform(platform.id)}
+                  disabled={loading}
+                  className={cn(
+                    "h-10 px-4 rounded-full text-xs font-bold tracking-wide border-2 transition-all active:scale-[0.98] cursor-pointer disabled:opacity-50",
+                    {
+                      "bg-forest-accent border-transparent text-white shadow-md":
+                        isSelected,
+                      "bg-slate-50 border-slate-200 text-slate-600 hover:border-forest-accent/50 hover:text-black dark:bg-slate-900 dark:border-slate-700 dark:text-slate-300 dark:hover:border-forest-accent/50 dark:hover:text-white":
+                        !isSelected,
+                    }
+                  )}
+                >
+                  {platform.label}
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>
 
       {/* Error state */}
       {error && (
-        <div className="bg-[#2E1A1A] border border-red-500/50 rounded-xl p-3 px-4 text-center text-sm text-red-300 font-medium">
+        <div className="bg-red-50 border-2 border-red-200 rounded-2xl p-4 text-center text-sm text-red-600 font-bold dark:bg-red-950/20 dark:border-red-900/50 dark:text-red-400">
           {error}
         </div>
       )}

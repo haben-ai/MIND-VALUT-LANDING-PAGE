@@ -5,22 +5,25 @@
 @layer base {
   :root {
     color-scheme: light dark;
-    --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-sans: var(--font-plus-jakarta), system-ui, sans-serif;
     
-    /* Light Mode (Default Root) */
+    /* Light Mode */
     --base-color: #FFFFFF;
-    --surface-color: #FAFCFB;
-    --surface-color-2: #F1F4F2;
-    --surface-color-3: #E6ECE9;
-    --border-color: rgba(46, 107, 62, 0.15);
-    --border-subtle-color: rgba(46, 107, 62, 0.06);
-    --text-primary-color: #09110B;
-    --text-secondary-color: #2E4739;
-    --text-muted-color: #5B7567;
+    --surface-color: #F7F9FA;
+    --surface-color-2: #FFFFFF;
+    --surface-color-3: #EDF1F3;
+    --border-color: #E5E7EB;
+    --border-subtle-color: #F3F4F6;
+    --text-primary-color: #0F172A;
+    --text-secondary-color: #475569;
+    --text-muted-color: #64748B;
   }
 
   .dark {
     color-scheme: dark;
+    --font-sans: var(--font-plus-jakarta), system-ui, sans-serif;
+    
+    /* Dark Mode (Original VORA Forest Green Palette) */
     --base-color: #0A1208;
     --surface-color: #0E1A12;
     --surface-color-2: #142B1A;
@@ -35,7 +38,7 @@
   body {
     background-color: var(--base-color);
     color: var(--text-primary-color);
-    font-family: var(--font-inter);
+    font-family: var(--font-sans);
     overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   }
@@ -44,6 +47,114 @@
   ::selection {
     background-color: rgba(61, 153, 112, 0.3);
     color: var(--text-primary-color);
+  }
+
+  /* 4B: Testimonials Marquee Scrolls */
+  @keyframes scrollLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes scrollRight {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+
+  .scroll-left-marquee {
+    display: flex;
+    width: max-content;
+    animation: scrollLeft 30s linear infinite;
+  }
+
+  .scroll-right-marquee {
+    display: flex;
+    width: max-content;
+    animation: scrollRight 25s linear infinite;
+  }
+
+  .scroll-left-marquee:hover,
+  .scroll-right-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  .marquee-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+
+  /* 5A: Navbar hover grows from center */
+  .nav-link-underline {
+    position: relative;
+  }
+
+  .nav-link-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #3D9970;
+    transition: width 0.3s ease, left 0.3s ease;
+    transform: translateX(-50%);
+    transform-origin: center;
+  }
+
+  .nav-link-underline:hover::after {
+    width: 100%;
+  }
+
+  /* 5C: CTA button hover shine sweep */
+  .shine-sweep {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shine-sweep::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.15),
+      transparent
+    );
+    transition: left 0.5s ease;
+  }
+
+  .shine-sweep:hover::after {
+    left: 150%;
+  }
+
+  /* 5F: Footer animated rotating conic-gradient top border (slower 8s) */
+  .footer-animated-border {
+    position: relative;
+    padding-top: 1px; /* border thickness */
+  }
+
+  .footer-animated-border::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 1px;
+    background: conic-gradient(
+      from 0deg,
+      #3D9970 0%,
+      #5AB88A 25%,
+      #1E4028 50%,
+      #3D9970 100%
+    );
+    animation: rotate-conic 8s linear infinite;
+    z-index: 10;
   }
 
   /* Custom scrollbar matching Forest Intelligence */
@@ -80,7 +191,7 @@
 
   /* Typography Helpers */
   .font-display {
-    font-family: var(--font-inter);
+    font-family: var(--font-sans);
     font-size: clamp(48px, 7vw, 88px);
     font-weight: 700;
     letter-spacing: -0.04em;
@@ -88,7 +199,7 @@
   }
 
   .font-h2 {
-    font-family: var(--font-inter);
+    font-family: var(--font-sans);
     font-size: clamp(32px, 4vw, 52px);
     font-weight: 600;
     letter-spacing: -0.03em;
@@ -96,21 +207,21 @@
   }
 
   .font-h3 {
-    font-family: var(--font-inter);
+    font-family: var(--font-sans);
     font-size: clamp(20px, 2.5vw, 28px);
     font-weight: 600;
     letter-spacing: -0.02em;
   }
 
   .font-body-large {
-    font-family: var(--font-inter);
+    font-family: var(--font-sans);
     font-size: clamp(16px, 1.5vw, 20px);
     font-weight: 400;
     line-height: 1.7;
   }
 
   .font-label {
-    font-family: var(--font-inter);
+    font-family: var(--font-sans);
     font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.08em;

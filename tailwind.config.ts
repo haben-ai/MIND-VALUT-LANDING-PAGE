@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-plus-jakarta)", "system-ui", "sans-serif"],
+      },
       colors: {
         forest: {
           base: "var(--base-color)",          // Deepest background
@@ -17,9 +20,9 @@ const config: Config = {
           "surface-3": "var(--surface-color-3)", // Elevated elements
           border: "var(--border-color)",      // Borders, dividers
           "border-subtle": "var(--border-subtle-color)", // Very subtle borders
-          accent: "#3D9970",                  // Primary CTA, links
-          "accent-light": "#5AB88A",          // Hover states
-          highlight: "#C8E6C9",               // Success, confirmation
+          accent: "#3D9970",                  // Original Vora green
+          "accent-light": "#5AB88A",          // Original Vora green hover
+          highlight: "#C8E6C9",               // Original Vora green highlight
           // Text values
           "text-primary": "var(--text-primary-color)",
           "text-secondary": "var(--text-secondary-color)",

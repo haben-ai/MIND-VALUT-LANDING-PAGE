@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-forest-base border-t-[0.5px] border-forest-border/20 py-12 relative z-10 overflow-hidden">
+    <footer className="bg-forest-base footer-animated-border py-12 relative z-10 overflow-hidden">
       <div className="max-w-[1200px] w-full mx-auto px-6 md:px-12">
         <ScrollAnimate className="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-forest-border/10">
           {/* Left: Brand */}

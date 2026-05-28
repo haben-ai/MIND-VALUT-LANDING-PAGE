@@ -14,9 +14,9 @@ export const GlowButton = React.forwardRef<HTMLButtonElement, GlowButtonProps>(
         ref={ref}
         disabled={disabled || loading}
         className={cn(
-          "relative inline-flex items-center justify-center font-semibold text-white bg-forest-accent rounded-md transition-all duration-300 active:scale-[0.98] cursor-pointer shadow-glow-btn hover:shadow-glow-btn-hover hover:-translate-y-[1px] disabled:pointer-events-none disabled:opacity-50",
+          "relative inline-flex items-center justify-center font-bold tracking-wide text-white bg-forest-accent rounded-2xl active:scale-[0.99] transition-all duration-150 cursor-pointer border-b-[5px] border-[#047857] hover:brightness-[1.03] active:border-b-[1px] active:translate-y-[4px] disabled:pointer-events-none disabled:opacity-50 shine-sweep",
           {
-            "h-11 px-6 text-sm md:text-base": size === "md",
+            "h-12 px-6 text-sm md:text-base": size === "md",
             "h-14 px-8 text-base md:text-lg": size === "lg",
           },
           className

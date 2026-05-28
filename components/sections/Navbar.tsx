@@ -69,19 +69,19 @@ export const Navbar: React.FC = () => {
           <div className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection("how-it-works")}
-              className="text-sm font-normal text-forest-text-secondary hover:text-forest-text-primary transition-colors cursor-pointer"
+              className="text-sm font-normal text-forest-text-secondary hover:text-forest-text-primary transition-colors cursor-pointer nav-link-underline"
             >
               How it works
             </button>
             <button
               onClick={() => scrollToSection("features")}
-              className="text-sm font-normal text-forest-text-secondary hover:text-forest-text-primary transition-colors cursor-pointer"
+              className="text-sm font-normal text-forest-text-secondary hover:text-forest-text-primary transition-colors cursor-pointer nav-link-underline"
             >
               Features
             </button>
             <button
               onClick={() => scrollToSection("platforms")}
-              className="text-sm font-normal text-forest-text-secondary hover:text-forest-text-primary transition-colors cursor-pointer"
+              className="text-sm font-normal text-forest-text-secondary hover:text-forest-text-primary transition-colors cursor-pointer nav-link-underline"
             >
               Platforms
             </button>

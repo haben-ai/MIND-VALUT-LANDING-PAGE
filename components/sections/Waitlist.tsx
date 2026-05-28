@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ScrollAnimate } from "../ui/ScrollAnimate";
 import { Badge } from "../ui/Badge";
-import { ParticleField } from "../ui/ParticleField";
 import { WaitlistForm } from "../ui/WaitlistForm";
 import { SuccessState } from "../ui/SuccessState";
 
@@ -37,9 +36,6 @@ export const Waitlist: React.FC = () => {
           WebkitMaskImage: "radial-gradient(circle at center, black 0%, transparent 100%)",
         }}
       />
-
-      {/* Floating Particles */}
-      <ParticleField />
 
       <div className="relative z-10 max-w-[1200px] w-full mx-auto px-6 md:px-12">
         <div className="max-w-[640px] mx-auto flex flex-col items-center">
