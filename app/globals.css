@@ -2,32 +2,159 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    color-scheme: light dark;
+    --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* Light Mode (Default Root) */
+    --base-color: #F3F7F4;
+    --surface-color: #E6ECE8;
+    --surface-color-2: #DBE4DF;
+    --surface-color-3: #D0DBD4;
+    --border-color: rgba(46, 107, 62, 0.2);
+    --border-subtle-color: rgba(46, 107, 62, 0.08);
+    --text-primary-color: #0A1208;
+    --text-secondary-color: #2F483A;
+    --text-muted-color: #5E7A6B;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --base-color: #0A1208;
+    --surface-color: #0E1A12;
+    --surface-color-2: #142B1A;
+    --surface-color-3: #1E4028;
+    --border-color: #2E6B3E;
+    --border-subtle-color: #1A3020;
+    --text-primary-color: #E8F0EC;
+    --text-secondary-color: #A8BFB0;
+    --text-muted-color: #7A9482;
+  }
+
+  body {
+    background-color: var(--base-color);
+    color: var(--text-primary-color);
+    font-family: var(--font-inter);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+
+  /* Selection styling */
+  ::selection {
+    background-color: rgba(61, 153, 112, 0.3);
+    color: var(--text-primary-color);
+  }
+
+  /* Custom scrollbar matching Forest Intelligence */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0A1208;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1E4028;
+    border: 2px solid #0A1208;
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2E6B3E;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer utilities {
+  /* SVG Noise Overlay (Visual Effect 1) */
+  .noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.03;
+    z-index: 9999;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  /* Typography Helpers */
+  .font-display {
+    font-family: var(--font-inter);
+    font-size: clamp(48px, 7vw, 88px);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.0;
+  }
+
+  .font-h2 {
+    font-family: var(--font-inter);
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+  }
+
+  .font-h3 {
+    font-family: var(--font-inter);
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .font-body-large {
+    font-family: var(--font-inter);
+    font-size: clamp(16px, 1.5vw, 20px);
+    font-weight: 400;
+    line-height: 1.7;
+  }
+
+  .font-label {
+    font-family: var(--font-inter);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Animated Conic Border (Visual Effect 6) */
+  .rotating-border-container {
+    position: relative;
+    overflow: hidden;
+    padding: 1px; /* border thickness */
+    border-radius: 12px;
+  }
+
+  .rotating-border-container::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+      from 0deg,
+      #3D9970 0%,
+      #5AB88A 25%,
+      #1E4028 50%,
+      #3D9970 100%
+    );
+    animation: rotate-conic 4s linear infinite;
+    z-index: 0;
+  }
+
+  .rotating-border-inner {
+    position: relative;
+    z-index: 1;
+    border-radius: 11px;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@keyframes rotate-conic {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
