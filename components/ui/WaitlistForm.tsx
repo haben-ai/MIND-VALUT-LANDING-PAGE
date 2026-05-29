@@ -72,7 +72,7 @@ export const WaitlistForm: React.FC<WaitlistFormProps> = ({ onSuccess }) => {
           });
           return;
         }
-        throw new Error(data.error || "Something went wrong.");
+        throw new Error(data.message || data.error || "Something went wrong.");
       }
 
       onSuccess({
@@ -106,10 +106,10 @@ export const WaitlistForm: React.FC<WaitlistFormProps> = ({ onSuccess }) => {
             />
             <label
               htmlFor="firstName"
-              className="absolute left-4 top-[18px] text-slate-400 dark:text-slate-500 font-bold pointer-events-none transition-all duration-200 origin-left
+              className="absolute left-4 top-[18px] text-sm text-slate-400 dark:text-slate-500 font-bold pointer-events-none transition-all duration-200 origin-left
                 peer-placeholder-shown:top-[18px] peer-placeholder-shown:scale-100
-                peer-focus:top-2 peer-focus:scale-75 peer-focus:text-forest-accent
-                peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:scale-75"
+                peer-focus:top-1.5 peer-focus:scale-75 peer-focus:text-forest-accent
+                peer-[:not(:placeholder-shown)]:top-1.5 peer-[:not(:placeholder-shown)]:scale-75"
             >
               Your first name
             </label>
@@ -128,10 +128,10 @@ export const WaitlistForm: React.FC<WaitlistFormProps> = ({ onSuccess }) => {
             />
             <label
               htmlFor="email"
-              className="absolute left-4 top-[18px] text-slate-400 dark:text-slate-500 font-bold pointer-events-none transition-all duration-200 origin-left
+              className="absolute left-4 top-[18px] text-sm text-slate-400 dark:text-slate-500 font-bold pointer-events-none transition-all duration-200 origin-left
                 peer-placeholder-shown:top-[18px] peer-placeholder-shown:scale-100
-                peer-focus:top-2 peer-focus:scale-75 peer-focus:text-forest-accent
-                peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:scale-75"
+                peer-focus:top-1.5 peer-focus:scale-75 peer-focus:text-forest-accent
+                peer-[:not(:placeholder-shown)]:top-1.5 peer-[:not(:placeholder-shown)]:scale-75"
             >
               your@email.com
             </label>

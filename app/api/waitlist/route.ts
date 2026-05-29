@@ -40,7 +40,10 @@ export async function POST(request: Request) {
 
       if (fetchError) {
         console.error("Supabase fetch error:", fetchError);
-        return NextResponse.json({ error: "server_error" }, { status: 500 });
+        return NextResponse.json(
+          { error: "server_error", message: `Supabase Fetch: ${fetchError.message}`, details: fetchError },
+          { status: 500 }
+        );
       }
 
       if (existing) {
@@ -72,7 +75,10 @@ export async function POST(request: Request) {
 
       if (insertError) {
         console.error("Supabase insert error:", insertError);
-        return NextResponse.json({ error: "server_error" }, { status: 500 });
+        return NextResponse.json(
+          { error: "server_error", message: `Supabase Insert: ${insertError.message}`, details: insertError },
+          { status: 500 }
+        );
       }
 
       position = inserted.position + 100;
@@ -157,19 +163,16 @@ export async function POST(request: Request) {
       </html>
     `;
 
-    // 5. Send confirmation email via Resend
+    // 5. Send confirmation email via Resend (fire-and-forget for ultra-low latency)
     if (isResendConfigured && resend) {
-      try {
-        await resend.emails.send({
-          from: "Vora <onboarding@resend.dev>",
-          to: cleanEmail,
-          subject: `You're #${position} on the Vora waitlist ✦`,
-          html: emailHtml,
-        });
-      } catch (emailErr) {
-        console.error("Resend send email error:", emailErr);
-        // Do not crash the waitlist signup if the confirmation email fails
-      }
+      resend.emails.send({
+        from: "Vora <onboarding@resend.dev>",
+        to: cleanEmail,
+        subject: `You're #${position} on the Vora waitlist ✦`,
+        html: emailHtml,
+      }).catch((emailErr) => {
+        console.error("Resend send email background error:", emailErr);
+      });
     } else {
       console.log(`✉️ Resend API not configured. Simulated email for #${position} (${cleanFirstName} - ${cleanEmail}) logged to console.`);
       console.log("---- SIMULATED EMAIL CONTENT ----");
@@ -187,6 +190,9 @@ export async function POST(request: Request) {
     });
   } catch (err) {
     console.error("Waitlist submission server error:", err);
-    return NextResponse.json({ error: "server_error" }, { status: 500 });
+    return NextResponse.json(
+      { error: "server_error", message: err instanceof Error ? err.message : String(err) },
+      { status: 500 }
+    );
   }
 }

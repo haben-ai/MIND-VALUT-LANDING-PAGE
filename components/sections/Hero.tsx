@@ -106,9 +106,9 @@ export const Hero: React.FC = () => {
             variants={staggerContainer}
             initial="hidden"
             animate={isLoaded ? "visible" : "hidden"}
-            className="text-[42px] sm:text-[62px] md:text-[84px] font-bold tracking-tighter leading-[0.95] text-forest-text-primary mb-6"
+            className="text-[42px] sm:text-[62px] md:text-[84px] font-bold tracking-tighter leading-[1.05] text-forest-text-primary mb-6"
           >
-            <span className="block overflow-hidden pb-1">
+            <span className="block overflow-hidden pb-3">
               {line1Words.map((word, idx) => (
                 <motion.span key={idx} variants={wordVariant} className="inline-block mr-[0.2em]">
                   {word}
@@ -116,7 +116,7 @@ export const Hero: React.FC = () => {
               ))}
             </span>
             <span
-              className="block overflow-hidden bg-gradient-to-r from-forest-accent via-forest-accent-light to-forest-highlight bg-clip-text text-transparent pb-1"
+              className="block overflow-hidden bg-gradient-to-r from-forest-accent via-forest-accent-light to-forest-highlight bg-clip-text text-transparent pb-3"
               style={{ filter: "drop-shadow(0 0 20px rgba(61,153,112,0.3))" }}
             >
               {line2Words.map((word, idx) => (
