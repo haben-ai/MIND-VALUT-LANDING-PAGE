@@ -2,6 +2,8 @@ import React from "react";
 import { supabaseAdmin, isSupabaseConfigured } from "@/lib/supabase";
 import { AdminDashboard } from "@/components/ui/AdminDashboard";
 
+export const dynamic = "force-dynamic";
+
 interface AdminPageProps {
   searchParams: {
     password?: string;
