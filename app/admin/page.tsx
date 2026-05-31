@@ -64,20 +64,7 @@ export default async function AdminPage({ searchParams }: AdminPageProps) {
 
   if (isSupabaseConfigured && supabaseAdmin) {
     try {
-      // Get count
-      const { count, error: countError } = await supabaseAdmin
-        .from("waitlist")
-        .select("*", { count: "exact", head: true });
-
-      if (countError) {
-        throw new Error(`Count fetch failed: ${countError.message} (${countError.code})`);
-      }
-
-      if (count !== null) {
-        totalSignups = count;
-      }
-
-      // Get recent entries
+      // Get recent entries first
       const { data, error: listError } = await supabaseAdmin
         .from("waitlist")
         .select("email, first_name, position, created_at")
@@ -96,6 +83,18 @@ export default async function AdminPage({ searchParams }: AdminPageProps) {
           createdAt: item.created_at,
         }));
       }
+
+      // Get count using email column to guarantee maximum compatibility
+      const { count, error: countError } = await supabaseAdmin
+        .from("waitlist")
+        .select("email", { count: "exact", head: true });
+
+      if (countError) {
+        throw new Error(`Count fetch failed: ${countError.message} (${countError.code})`);
+      }
+
+      // Safeguard against desyncs by taking the maximum of count query and successfully loaded entries
+      totalSignups = Math.max(count !== null ? count : 0, signups.length);
     } catch (err: any) {
       console.error("Failed to query Supabase admin waitlist data", err);
       isMock = true;

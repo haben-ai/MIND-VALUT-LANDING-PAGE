@@ -27,6 +27,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
   errorMsg = null,
 }) => {
   const [filterText, setFilterText] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
 
   // Search filter matching emails or names
   const filteredSignups = signups.filter(
@@ -34,6 +35,14 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
       s.email.toLowerCase().includes(filterText.toLowerCase()) ||
       s.firstName.toLowerCase().includes(filterText.toLowerCase())
   );
+
+  const pageSize = 10;
+  const totalPages = Math.max(1, Math.ceil(filteredSignups.length / pageSize));
+  const activePage = Math.min(currentPage, totalPages);
+
+  const startIndex = (activePage - 1) * pageSize;
+  const endIndex = Math.min(startIndex + pageSize, filteredSignups.length);
+  const paginatedSignups = filteredSignups.slice(startIndex, endIndex);
 
   const handleDownloadCsv = () => {
     // Generate CSV string
@@ -152,7 +161,10 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                 type="text"
                 placeholder="Search by name or email..."
                 value={filterText}
-                onChange={(e) => setFilterText(e.target.value)}
+                onChange={(e) => {
+                  setFilterText(e.target.value);
+                  setCurrentPage(1);
+                }}
                 className="bg-transparent border-none text-sm text-[#E8F0EC] placeholder-[#7A9482] focus:outline-none w-full"
               />
             </div>
@@ -170,8 +182,8 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#2E6B3E]/10 bg-[#0E1A12]">
-                {filteredSignups.length > 0 ? (
-                  filteredSignups.map((signup) => (
+                {paginatedSignups.length > 0 ? (
+                  paginatedSignups.map((signup) => (
                     <tr key={signup.position} className="hover:bg-[#142B1A]/40 transition-colors">
                       <td className="p-4 px-6 font-bold text-forest-accent">
                         #{signup.position.toLocaleString()}
@@ -193,6 +205,55 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
               </tbody>
             </table>
           </div>
+
+          {/* Pagination Controls */}
+          {filteredSignups.length > 0 && (
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#2E6B3E]/10 pt-6 mt-2">
+              <div className="text-xs text-[#7A9482]">
+                Showing <span className="font-semibold text-[#E8F0EC]">{startIndex + 1}</span> to{" "}
+                <span className="font-semibold text-[#E8F0EC]">{endIndex}</span> of{" "}
+                <span className="font-semibold text-[#E8F0EC]">{filteredSignups.length}</span>{" "}
+                registrations
+                {filteredSignups.length < signups.length && (
+                  <span className="text-[#3D9970]"> (filtered from {signups.length} total)</span>
+                )}
+              </div>
+
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
+                  disabled={activePage === 1}
+                  className="h-9 px-3.5 rounded-xl border border-[#2E6B3E]/30 bg-transparent text-xs font-semibold text-[#E8F0EC] transition-all hover:bg-[#142B1A]/40 disabled:opacity-40 disabled:hover:bg-transparent disabled:cursor-not-allowed select-none active:scale-[0.98]"
+                >
+                  Previous
+                </button>
+
+                <div className="flex items-center gap-1.5">
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+                    <button
+                      key={pageNum}
+                      onClick={() => setCurrentPage(pageNum)}
+                      className={`h-9 w-9 rounded-xl text-xs font-semibold transition-all select-none active:scale-[0.95] ${
+                        activePage === pageNum
+                          ? "bg-[#3D9970] text-white shadow-md shadow-[#3D9970]/10"
+                          : "bg-transparent border border-[#2E6B3E]/20 text-[#A8BFB0] hover:border-[#3D9970] hover:text-[#E8F0EC]"
+                      }`}
+                    >
+                      {pageNum}
+                    </button>
+                  ))}
+                </div>
+
+                <button
+                  onClick={() => setCurrentPage((prev) => Math.min(totalPages, prev + 1))}
+                  disabled={activePage === totalPages}
+                  className="h-9 px-3.5 rounded-xl border border-[#2E6B3E]/30 bg-transparent text-xs font-semibold text-[#E8F0EC] transition-all hover:bg-[#142B1A]/40 disabled:opacity-40 disabled:hover:bg-transparent disabled:cursor-not-allowed select-none active:scale-[0.98]"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
