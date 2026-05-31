@@ -15,12 +15,16 @@ interface AdminDashboardProps {
   totalSignups: number;
   signups: Signup[];
   password?: string;
+  isMock?: boolean;
+  errorMsg?: string | null;
 }
 
 export const AdminDashboard: React.FC<AdminDashboardProps> = ({
   totalSignups,
   signups,
   password = "",
+  isMock = false,
+  errorMsg = null,
 }) => {
   const [filterText, setFilterText] = useState("");
 
@@ -85,6 +89,23 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
             </Button>
           </div>
         </div>
+
+        {/* Warning Banner for Demo/Mock Mode */}
+        {isMock && (
+          <div className="bg-amber-950/20 border-2 border-amber-500/30 rounded-2xl p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-md">
+            <div className="flex flex-col gap-1">
+              <div className="text-amber-400 font-bold text-sm tracking-wide uppercase flex items-center gap-1.5">
+                <span>⚠️ Demo Mode / Fallback Active</span>
+              </div>
+              <p className="text-xs text-amber-200/80 leading-relaxed max-w-2xl">
+                {errorMsg || "The admin panel is currently running on mock demo data because it could not connect to your live database."}
+              </p>
+            </div>
+            <div className="text-[10px] text-amber-400/70 font-semibold border border-amber-500/20 rounded px-2.5 py-1 bg-amber-500/5 select-none shrink-0 self-start md:self-center">
+              LOCAL DEMO MODE
+            </div>
+          </div>
+        )}
 
         {/* Stats Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

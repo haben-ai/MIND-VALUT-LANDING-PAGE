@@ -47,8 +47,18 @@ export default async function AdminPage({ searchParams }: AdminPageProps) {
   }
 
   // 2. Fetch data (Supabase or Mock fallback)
-  let totalSignups = 2847;
+  let totalSignups = 0;
   let signups: Array<{ email: string; firstName: string; position: number; createdAt: string }> = [];
+  let isMock = false;
+  let errorMsg: string | null = null;
+
+  const getMockSignups = () => [
+    { email: "john.doe@gmail.com", firstName: "John", position: 2847, createdAt: new Date(Date.now() - 1000 * 60 * 10).toISOString() },
+    { email: "alex.seo@vercel.com", firstName: "Alex", position: 2846, createdAt: new Date(Date.now() - 1000 * 60 * 45).toISOString() },
+    { email: "sarah.inspo@creator.co", firstName: "Sarah", position: 2845, createdAt: new Date(Date.now() - 1000 * 60 * 120).toISOString() },
+    { email: "marcus.dev@startup.io", firstName: "Marcus", position: 2844, createdAt: new Date(Date.now() - 1000 * 60 * 300).toISOString() },
+    { email: "priya.nair@product.org", firstName: "Priya", position: 2843, createdAt: new Date(Date.now() - 1000 * 60 * 600).toISOString() },
+  ];
 
   if (isSupabaseConfigured && supabaseAdmin) {
     try {
@@ -57,7 +67,11 @@ export default async function AdminPage({ searchParams }: AdminPageProps) {
         .from("waitlist")
         .select("*", { count: "exact", head: true });
 
-      if (!countError && count !== null) {
+      if (countError) {
+        throw new Error(`Count fetch failed: ${countError.message} (${countError.code})`);
+      }
+
+      if (count !== null) {
         totalSignups = count;
       }
 
@@ -68,7 +82,11 @@ export default async function AdminPage({ searchParams }: AdminPageProps) {
         .order("created_at", { ascending: false })
         .limit(100);
 
-      if (!listError && data) {
+      if (listError) {
+        throw new Error(`Waitlist fetch failed: ${listError.message} (${listError.code})`);
+      }
+
+      if (data) {
         signups = data.map((item) => ({
           email: item.email,
           firstName: item.first_name || "",
@@ -76,19 +94,22 @@ export default async function AdminPage({ searchParams }: AdminPageProps) {
           createdAt: item.created_at,
         }));
       }
-    } catch (err) {
+    } catch (err: any) {
       console.error("Failed to query Supabase admin waitlist data", err);
+      isMock = true;
+      errorMsg = err.message || String(err);
+      signups = getMockSignups();
+      totalSignups = signups.length;
     }
   } else {
-    // Generate realistic looking mock database data if Supabase keys aren't set
-    signups = [
-      { email: "john.doe@gmail.com", firstName: "John", position: 2847, createdAt: new Date(Date.now() - 1000 * 60 * 10).toISOString() },
-      { email: "alex.seo@vercel.com", firstName: "Alex", position: 2846, createdAt: new Date(Date.now() - 1000 * 60 * 45).toISOString() },
-      { email: "sarah.inspo@creator.co", firstName: "Sarah", position: 2845, createdAt: new Date(Date.now() - 1000 * 60 * 120).toISOString() },
-      { email: "marcus.dev@startup.io", firstName: "Marcus", position: 2844, createdAt: new Date(Date.now() - 1000 * 60 * 300).toISOString() },
-      { email: "priya.nair@product.org", firstName: "Priya", position: 2843, createdAt: new Date(Date.now() - 1000 * 60 * 600).toISOString() },
-    ];
-    totalSignups = 2847;
+    isMock = true;
+    if (!isSupabaseConfigured) {
+      errorMsg = "NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY environment variables are missing in your deployment.";
+    } else if (!supabaseAdmin) {
+      errorMsg = "SUPABASE_SERVICE_ROLE_KEY environment variable is missing. This key is required to securely retrieve registered user emails on the admin panel.";
+    }
+    signups = getMockSignups();
+    totalSignups = signups.length;
   }
 
   // 3. Render Admin Panel Client Component
@@ -97,6 +118,8 @@ export default async function AdminPage({ searchParams }: AdminPageProps) {
       totalSignups={totalSignups}
       signups={signups}
       password={passwordQuery}
+      isMock={isMock}
+      errorMsg={errorMsg}
     />
   );
 }
