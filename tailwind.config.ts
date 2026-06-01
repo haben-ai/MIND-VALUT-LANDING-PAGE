@@ -20,9 +20,9 @@ const config: Config = {
           "surface-3": "var(--surface-color-3)", // Elevated elements
           border: "var(--border-color)",      // Borders, dividers
           "border-subtle": "var(--border-subtle-color)", // Very subtle borders
-          accent: "#3D9970",                  // Original Vora green
-          "accent-light": "#5AB88A",          // Original Vora green hover
-          highlight: "#C8E6C9",               // Original Vora green highlight
+          accent: "#3D9970",                  // Original Index green
+          "accent-light": "#5AB88A",          // Original Index green hover
+          highlight: "#C8E6C9",               // Original Index green highlight
           // Text values
           "text-primary": "var(--text-primary-color)",
           "text-secondary": "var(--text-secondary-color)",

@@ -57,18 +57,26 @@ export const ShareMockup: React.FC = () => {
             <span className="text-[7px] text-forest-text-muted">Messages</span>
           </div>
 
-          {/* Target 2: VORA (The star CTA!) */}
+          {/* Target 2: INDEX (The star CTA!) */}
           <div className="flex flex-col items-center gap-1 shrink-0 relative">
             <motion.div
               animate={{ scale: [1, 1.1, 1] }}
               transition={{ repeat: Infinity, duration: 2 }}
               className="w-10 h-10 rounded-full bg-forest-accent border border-forest-accent-light flex items-center justify-center shadow-[0_0_15px_rgba(61,153,112,0.6)] cursor-pointer"
             >
-              <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4">
-                <path d="M4 4.5l8 14 8-14" />
+              <svg className="w-5.5 h-5.5 text-white" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M50 88 C20 70 12 40 25 20 C35 10 60 8 80 15 C90 35 80 68 50 88 Z"
+                  stroke="currentColor"
+                  strokeWidth="11"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <circle cx="50" cy="40" r="7.5" fill="currentColor" />
+                <rect x="44" y="53" width="12" height="23" rx="3.5" fill="currentColor" />
               </svg>
             </motion.div>
-            <span className="text-[8px] font-bold text-forest-accent-light">Save to Vora</span>
+            <span className="text-[8px] font-bold text-forest-accent-light">Save to Index</span>
           </div>
 
           {/* Target 3: WhatsApp */}
@@ -92,7 +100,7 @@ export const ShareMockup: React.FC = () => {
   );
 };
 
-// STEP 2: Save Mockup (Vora app saving overlay)
+// STEP 2: Save Mockup (Index app saving overlay)
 export const SaveMockup: React.FC = () => {
   return (
     <div className="w-full max-w-[270px] h-[330px] rounded-2xl bg-forest-surface border border-forest-border/30 overflow-hidden shadow-2xl flex flex-col justify-between p-3 select-none relative">
@@ -101,7 +109,7 @@ export const SaveMockup: React.FC = () => {
 
       {/* Mock Header */}
       <div className="flex items-center justify-between border-b border-forest-border/10 pb-2">
-        <span className="text-[9px] font-bold text-forest-text-muted tracking-wider">VORA CAPTURE</span>
+        <span className="text-[9px] font-bold text-forest-text-muted tracking-wider">INDEX CAPTURE</span>
         <Sparkles className="w-3.5 h-3.5 text-forest-accent animate-pulse-subtle" />
       </div>
 
@@ -153,7 +161,7 @@ export const SaveMockup: React.FC = () => {
   );
 };
 
-// STEP 3: Library Mockup (Vora Organized Library, Search and Folderwise)
+// STEP 3: Library Mockup (Index Organized Library, Search and Folderwise)
 export const LibraryMockup: React.FC = () => {
   return (
     <div className="w-full max-w-[270px] h-[330px] rounded-2xl bg-forest-surface border border-forest-border/30 overflow-hidden shadow-2xl flex flex-col p-3 select-none relative">

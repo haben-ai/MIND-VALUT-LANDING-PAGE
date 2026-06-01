@@ -17,7 +17,7 @@ export const SuccessState: React.FC<SuccessStateProps> = ({
   position,
 }) => {
   const [copied, setCopied] = useState(false);
-  const shareUrl = typeof window !== "undefined" ? window.location.origin : "https://vora.app";
+  const shareUrl = typeof window !== "undefined" ? window.location.origin : "https://index.app";
   const tweetText = `Just joined the Index waitlist — an app that saves your reels and social media posts so you never lose them again. Join me: ${shareUrl}`;
   const twitterIntent = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
 
@@ -71,14 +71,14 @@ export const SuccessState: React.FC<SuccessStateProps> = ({
       {/* Message */}
       <p className="text-sm md:text-base text-forest-text-secondary leading-relaxed mb-8 max-w-sm">
         We&apos;ll email <span className="text-forest-text-primary font-medium">{firstName}</span> at{" "}
-        <span className="text-forest-text-primary font-medium">{email}</span> when Vora is ready for
+        <span className="text-forest-text-primary font-medium">{email}</span> when Index is ready for
         early access.
       </p>
 
       {/* Share Actions */}
       <div className="w-full flex flex-col gap-3">
         <div className="text-xs font-semibold tracking-widest text-forest-text-muted uppercase mb-1">
-          Tell a friend about Vora
+          Tell a friend about Index
         </div>
         <div className="flex flex-col sm:flex-row gap-3 w-full">
           {/* Twitter / X */}

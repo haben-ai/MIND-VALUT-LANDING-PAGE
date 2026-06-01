@@ -150,7 +150,7 @@ export const Features: React.FC = () => {
                 <span className="text-[8px] text-forest-text-muted mr-1.5">You · Just now</span>
               </div>
 
-              {/* Vora AI Response */}
+              {/* Index AI Response */}
               <div className="flex flex-col items-start gap-1">
                 <div className="bg-forest-surface-2 border border-forest-border/20 p-3 px-4 rounded-2xl rounded-tl-none text-xs text-forest-text-secondary max-w-[90%] leading-relaxed shadow-sm">
                   <p className="mb-2 text-forest-text-primary font-medium">

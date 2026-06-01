@@ -31,7 +31,7 @@ export const BrowserMockup: React.FC = () => {
 
         {/* Address Bar */}
         <div className="bg-forest-surface-2 border border-forest-border/20 rounded-md px-12 py-0.5 text-[8px] text-forest-text-muted font-medium select-none shadow-[inset_0_1px_2px_rgba(0,0,0,0.3)]">
-          vora.app/inbox
+          index.app/inbox
         </div>
 
         <div className="w-12" />

@@ -68,7 +68,7 @@ export const PhoneMockup: React.FC = () => {
         <div className="px-2 mb-3">
           <div className="flex items-center justify-between">
             <span className="text-sm font-bold tracking-[0.1em] text-forest-text-primary">
-              VORA
+              INDEX
             </span>
             <div className="h-5 w-5 rounded-full bg-forest-accent/20 border border-forest-accent/50 flex items-center justify-center">
               <span className="h-2.5 w-2.5 rounded-full bg-forest-accent" />

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Index — Your social memory",
     description: "Save reels, posts and videos from any social media. Find them forever.",
-    url: "https://vora.app",
+    url: "https://index.app",
     siteName: "Index",
     images: [
       {
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  metadataBase: new URL("https://vora.app"),
+  metadataBase: new URL("https://index.app"),
 };
 
 export default function RootLayout({

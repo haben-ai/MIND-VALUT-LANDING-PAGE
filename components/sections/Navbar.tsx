@@ -43,7 +43,7 @@ export const Navbar: React.FC = () => {
         )}
       >
         <div className="max-w-[1200px] mx-auto px-6 md:px-12 flex items-center justify-between">
-          {/* Left: VORA wordmark + small logo */}
+          {/* Left: INDEX wordmark + small logo */}
           <div
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="flex items-center gap-2.5 cursor-pointer select-none group"

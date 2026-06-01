@@ -42,7 +42,7 @@ export const Problem: React.FC = () => {
 
         {/* Chaos vs Solution */}
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
-          {/* Left Card: Before Vora */}
+          {/* Left Card: Before Index */}
           <ScrollAnimate delay={0.1} className="h-full">
             <GlassCard
               tint="red"
@@ -51,7 +51,7 @@ export const Problem: React.FC = () => {
               <div>
                 <div className="flex items-center justify-between mb-6">
                   <span className="text-[11px] font-semibold text-red-400 tracking-wider uppercase bg-red-500/10 px-3 py-1 rounded-full border border-red-500/20 flex items-center gap-1.5">
-                    <AlertTriangle className="h-3 w-3" /> Before Vora
+                    <AlertTriangle className="h-3 w-3" /> Before Index
                   </span>
                   <span className="text-xs text-red-300 font-medium">Where things go to die</span>
                 </div>
@@ -146,7 +146,7 @@ export const Problem: React.FC = () => {
             </GlassCard>
           </ScrollAnimate>
 
-          {/* Right Card: With Vora */}
+          {/* Right Card: With Index */}
           <ScrollAnimate delay={0.2} className="h-full">
             <GlassCard
               tint="green"
@@ -158,7 +158,7 @@ export const Problem: React.FC = () => {
                 <div>
                   <div className="flex items-center justify-between mb-6">
                     <span className="text-[11px] font-semibold text-forest-accent-light tracking-wider uppercase bg-forest-accent/15 px-3 py-1 rounded-full border border-forest-accent/30 flex items-center gap-1.5 animate-pulse-subtle">
-                      <CheckCircle className="h-3 w-3" /> With Vora
+                      <CheckCircle className="h-3 w-3" /> With Index
                     </span>
                     <span className="text-xs text-forest-accent-light font-medium">
                       Where knowledge lives

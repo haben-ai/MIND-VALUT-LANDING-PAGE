@@ -6,25 +6,25 @@ import { ScrollAnimate } from "../ui/ScrollAnimate";
 
 const ROW1_TESTIMONIALS = [
   {
-    quote: "I have 847 saved Instagram posts I've never opened again. Vora is the first app that made me feel like saving actually means something.",
+    quote: "I have 847 saved Instagram posts I've never opened again. Index is the first app that made me feel like saving actually means something.",
     author: "Sarah K.",
     role: "Content Creator",
     initials: "SK",
   },
   {
-    quote: "As someone with ADHD, I save everything and find nothing. Vora is the first tool that actually solves this instead of making it worse.",
+    quote: "As someone with ADHD, I save everything and find nothing. Index is the first tool that actually solves this instead of making it worse.",
     author: "Marcus T.",
     role: "Startup Founder",
     initials: "MT",
   },
   {
-    quote: "I used Pocket for years. When it shut down I tried everything. Vora is the only one built for how I actually consume content in 2026.",
+    quote: "I used Pocket for years. When it shut down I tried everything. Index is the only one built for how I actually consume content in 2026.",
     author: "Priya N.",
     role: "Product Manager",
     initials: "PN",
   },
   {
-    quote: "Every video I share to Vora is instantly transcribed and searchable. I can find a specific quote from a 2-hour podcast in seconds.",
+    quote: "Every video I share to Index is instantly transcribed and searchable. I can find a specific quote from a 2-hour podcast in seconds.",
     author: "Liam H.",
     role: "Researcher",
     initials: "LH",
@@ -39,7 +39,7 @@ const ROW2_TESTIMONIALS = [
     initials: "ER",
   },
   {
-    quote: "My bookmark folder was a graveyard of good intentions. Vora makes it a live, functional second brain.",
+    quote: "My bookmark folder was a graveyard of good intentions. Index makes it a live, functional second brain.",
     author: "David B.",
     role: "Software Engineer",
     initials: "DB",
