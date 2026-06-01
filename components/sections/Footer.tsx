@@ -19,18 +19,20 @@ export const Footer: React.FC = () => {
               className="flex items-center gap-2 cursor-pointer select-none group"
             >
               <svg
-                className="h-5 w-5 text-forest-accent group-hover:text-forest-accent-light transition-colors"
-                viewBox="0 0 24 24"
+                className="h-6 w-6 text-forest-accent group-hover:text-forest-accent-light transition-colors shrink-0"
+                viewBox="0 0 100 100"
                 fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <rect x="4" y="4" width="16" height="16" rx="2" />
-                <path d="M9 9h6" />
-                <path d="M9 13h6" />
-                <path d="M9 17h4" />
+                <path
+                  d="M50 88 C20 70 12 40 25 20 C35 10 60 8 80 15 C90 35 80 68 50 88 Z"
+                  stroke="currentColor"
+                  strokeWidth="11"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <circle cx="50" cy="40" r="7.5" fill="currentColor" />
+                <rect x="44" y="53" width="12" height="23" rx="3.5" fill="currentColor" />
               </svg>
               <span className="text-lg font-bold tracking-[0.1em] text-forest-text-primary uppercase">
                 Index
