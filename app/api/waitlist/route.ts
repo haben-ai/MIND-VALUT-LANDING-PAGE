@@ -109,7 +109,7 @@ export async function POST(request: Request) {
     }
 
     // 4. Formulate email contents
-    const tweetText = `Just joined the Vora waitlist — an app that saves your reels and social media posts so you never lose them again. Join me: https://vora.app`;
+    const tweetText = `Just joined the Index waitlist — an app that saves your reels and social media posts so you never lose them again. Join me: https://index.app`;
     const twitterIntent = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
 
     const emailHtml = `
@@ -117,21 +117,21 @@ export async function POST(request: Request) {
       <html>
       <head>
         <meta charset="utf-8">
-        <title>You're #${position} on the Vora waitlist</title>
+        <title>You're #${position} on the Index waitlist</title>
       </head>
       <body style="background-color: #0A1208; color: #E8F0EC; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 40px 20px; text-align: center;">
         <div style="max-w: 600px; margin: 0 auto; background-color: #0E1A12; border: 1px solid #1A3020; border-radius: 16px; padding: 40px; text-align: left;">
           
           <!-- Header -->
           <div style="text-align: center; margin-bottom: 40px;">
-            <div style="font-size: 24px; font-weight: bold; letter-spacing: 0.1em; color: #3D9970; margin-bottom: 4px;">VORA</div>
+            <div style="font-size: 24px; font-weight: bold; letter-spacing: 0.1em; color: #3D9970; margin-bottom: 4px;">INDEX</div>
             <div style="font-size: 12px; color: #7A9482; text-transform: uppercase; letter-spacing: 0.08em;">Your social memory</div>
           </div>
           
           <!-- Body -->
           <div style="font-size: 16px; line-height: 1.6; color: #A8BFB0; margin-bottom: 32px;">
             <p style="color: #E8F0EC; font-size: 18px; font-weight: 500; margin-top: 0;">Hey ${cleanFirstName},</p>
-            <p>You're officially on the Vora waitlist. We are preparing to open early access seats soon.</p>
+            <p>You're officially on the Index waitlist. We are preparing to open early access seats soon.</p>
           </div>
           
           <!-- Position Box -->
@@ -154,7 +154,7 @@ export async function POST(request: Request) {
           
           <!-- Footer -->
           <div style="border-t: 1px solid #1A3020; pt: 20px; text-align: center; font-size: 12px; color: #7A9482;">
-            <p style="margin: 0 0 8px 0;">Vora &middot; Your social memory</p>
+            <p style="margin: 0 0 8px 0;">Index &middot; Your social memory</p>
             <p style="margin: 0;"><a href="#" style="color: #7A9482; text-decoration: underline;">Unsubscribe</a></p>
           </div>
           
@@ -166,9 +166,9 @@ export async function POST(request: Request) {
     // 5. Send confirmation email via Resend (fire-and-forget for ultra-low latency)
     if (isResendConfigured && resend) {
       resend.emails.send({
-        from: "Vora <onboarding@resend.dev>",
+        from: "Index <onboarding@resend.dev>",
         to: cleanEmail,
-        subject: `You're #${position} on the Vora waitlist ✦`,
+        subject: `You're #${position} on the Index waitlist ✦`,
         html: emailHtml,
       }).catch((emailErr) => {
         console.error("Resend send email background error:", emailErr);
@@ -177,7 +177,7 @@ export async function POST(request: Request) {
       console.log(`✉️ Resend API not configured. Simulated email for #${position} (${cleanFirstName} - ${cleanEmail}) logged to console.`);
       console.log("---- SIMULATED EMAIL CONTENT ----");
       console.log(`To: ${cleanEmail}`);
-      console.log(`Subject: You're #${position} on the Vora waitlist ✦`);
+      console.log(`Subject: You're #${position} on the Index waitlist ✦`);
       console.log("---------------------------------");
     }
 
@@ -194,5 +194,26 @@ export async function POST(request: Request) {
       { error: "server_error", message: err instanceof Error ? err.message : String(err) },
       { status: 500 }
     );
+  }
+}
+
+export async function GET() {
+  try {
+    let dbCount = 0;
+    if (isSupabaseConfigured && supabase) {
+      const { count, error } = await supabase
+        .from("waitlist")
+        .select("email", { count: "exact", head: true });
+      if (!error && count !== null) {
+        dbCount = count;
+      }
+    } else {
+      // Fallback mock count for local testing (matches the 9 live users in supabase)
+      dbCount = 9;
+    }
+    return NextResponse.json({ count: 100 + dbCount });
+  } catch (err) {
+    console.error("Waitlist count fetch server error:", err);
+    return NextResponse.json({ count: 100 });
   }
 }

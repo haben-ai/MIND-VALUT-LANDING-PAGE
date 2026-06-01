@@ -61,7 +61,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", `vora_waitlist_${new Date().toISOString().split("T")[0]}.csv`);
+    link.setAttribute("download", `index_waitlist_${new Date().toISOString().split("T")[0]}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -82,7 +82,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
               Waitlist Control Console
             </div>
             <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-[#E8F0EC]">
-              Vora Administrator
+              Index Administrator
             </h1>
           </div>
 

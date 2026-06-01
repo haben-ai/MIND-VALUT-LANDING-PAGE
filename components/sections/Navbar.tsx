@@ -48,20 +48,23 @@ export const Navbar: React.FC = () => {
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="flex items-center gap-2.5 cursor-pointer select-none group"
           >
-            {/* V-shaped SVG logo */}
+            {/* Index SVG logo */}
             <svg
               className="h-6 w-6 text-forest-accent group-hover:text-forest-accent-light transition-colors duration-300"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="3.5"
+              strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <path d="M4 4.5l8 14 8-14" />
+              <rect x="4" y="4" width="16" height="16" rx="2" />
+              <path d="M9 9h6" />
+              <path d="M9 13h6" />
+              <path d="M9 17h4" />
             </svg>
-            <span className="text-xl font-bold tracking-[0.1em] text-forest-text-primary">
-              VORA
+            <span className="text-xl font-bold tracking-[0.1em] text-forest-text-primary uppercase">
+              Index
             </span>
           </div>
 

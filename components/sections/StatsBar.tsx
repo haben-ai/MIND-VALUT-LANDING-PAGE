@@ -4,7 +4,11 @@ import React from "react";
 import { AnimatedCounter } from "../ui/AnimatedCounter";
 import { ScrollAnimate } from "../ui/ScrollAnimate";
 
-export const StatsBar: React.FC = () => {
+interface StatsBarProps {
+  waitlistCount?: number;
+}
+
+export const StatsBar: React.FC<StatsBarProps> = ({ waitlistCount = 109 }) => {
   return (
     <section className="bg-forest-surface border-y-[0.5px] border-forest-border/20 py-10 relative z-10 overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
@@ -13,7 +17,7 @@ export const StatsBar: React.FC = () => {
             {/* Stat 1 */}
             <div className="flex flex-col items-center text-center lg:px-4">
               <span className="text-[32px] sm:text-[40px] md:text-[48px] font-bold text-forest-text-primary tracking-tight mb-1">
-                <AnimatedCounter value={2847} suffix="+" />
+                <AnimatedCounter value={waitlistCount} suffix="+" />
               </span>
               <span className="text-xs sm:text-sm font-medium text-forest-text-muted">
                 People on the waitlist

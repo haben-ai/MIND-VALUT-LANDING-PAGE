@@ -64,7 +64,7 @@ export const Waitlist: React.FC = () => {
 
                 {/* Subtext */}
                 <p className="text-base sm:text-lg md:text-xl font-normal text-forest-text-secondary leading-relaxed max-w-[500px] mb-10">
-                  Join the waitlist. We&apos;ll email you the moment Vora is ready. Free during beta. No
+                  Join the waitlist. We&apos;ll email you the moment Index is ready. Free during beta. No
                   spam ever.
                 </p>
 

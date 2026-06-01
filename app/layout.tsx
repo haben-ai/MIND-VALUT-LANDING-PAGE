@@ -10,9 +10,9 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Vora — Your social memory",
+  title: "Index — Your social memory",
   description:
-    "Stop losing saved reels, posts and videos. Vora saves every piece of social media content you share — and makes it findable forever. The best Pocket alternative for 2026.",
+    "Stop losing saved reels, posts and videos. Index saves every piece of social media content you share — and makes it findable forever. The best Pocket alternative for 2026.",
   keywords: [
     "pocket alternative",
     "save instagram reels",
@@ -22,23 +22,23 @@ export const metadata: Metadata = {
     "pocket alternative 2026",
   ],
   openGraph: {
-    title: "Vora — Your social memory",
+    title: "Index — Your social memory",
     description: "Save reels, posts and videos from any social media. Find them forever.",
     url: "https://vora.app",
-    siteName: "Vora",
+    siteName: "Index",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Vora - Your social memory",
+        alt: "Index - Your social memory",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vora — Your social memory",
+    title: "Index — Your social memory",
     description: "Stop losing saved reels and posts.",
     images: ["/og-image.png"],
   },

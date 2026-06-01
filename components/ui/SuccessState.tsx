@@ -18,7 +18,7 @@ export const SuccessState: React.FC<SuccessStateProps> = ({
 }) => {
   const [copied, setCopied] = useState(false);
   const shareUrl = typeof window !== "undefined" ? window.location.origin : "https://vora.app";
-  const tweetText = `Just joined the Vora waitlist — an app that saves your reels and social media posts so you never lose them again. Join me: ${shareUrl}`;
+  const tweetText = `Just joined the Index waitlist — an app that saves your reels and social media posts so you never lose them again. Join me: ${shareUrl}`;
   const twitterIntent = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
 
   const handleCopyLink = async () => {

@@ -10,14 +10,14 @@ const STEPS = [
     number: "01",
     icon: Share2,
     title: "Share from any app",
-    body: "Open any reel, post, or video in Instagram, TikTok, YouTube, Reddit or X. Tap Share. Select Vora. Done in one tap.",
+    body: "Open any reel, post, or video in Instagram, TikTok, YouTube, Reddit or X. Tap Share. Select Index. Done in one tap.",
     mockup: ShareMockup,
   },
   {
     number: "02",
     icon: Layers,
-    title: "Vora captures everything",
-    body: "Vora fetches the title, creator, thumbnail, caption and metadata automatically. Your library updates instantly.",
+    title: "Index captures everything",
+    body: "Index fetches the title, creator, thumbnail, caption and metadata automatically. Your library updates instantly.",
     mockup: SaveMockup,
   },
   {

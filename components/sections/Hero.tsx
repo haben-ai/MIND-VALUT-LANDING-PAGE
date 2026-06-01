@@ -19,7 +19,11 @@ const PLATFORMS = [
   { name: "X", color: "#7A9482" },
 ];
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  waitlistCount?: number;
+}
+
+export const Hero: React.FC<HeroProps> = ({ waitlistCount = 109 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [submission, setSubmission] = useState<{
     firstName: string;
@@ -134,7 +138,7 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-base sm:text-lg md:text-xl font-normal text-forest-text-secondary leading-relaxed max-w-[560px] mb-8"
           >
-            Vora saves every reel, post, video and thread you share from Instagram, TikTok, YouTube,
+            Index saves every reel, post, video and thread you share from Instagram, TikTok, YouTube,
             Reddit and X — and makes them findable forever.
           </motion.p>
 
@@ -228,7 +232,7 @@ export const Hero: React.FC = () => {
             </div>
             <div className="text-sm text-forest-text-muted font-normal">
               Join <span className="text-forest-text-primary font-semibold">
-                <AnimatedCounter value={2847} />
+                <AnimatedCounter value={waitlistCount} />
               </span>{" "}
               people on the waitlist
             </div>

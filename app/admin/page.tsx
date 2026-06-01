@@ -21,7 +21,7 @@ export default async function AdminPage({ searchParams }: AdminPageProps) {
     return (
       <div className="min-h-screen bg-[#0A1208] text-[#E8F0EC] flex flex-col items-center justify-center p-6 font-sans">
         <div className="max-w-md w-full bg-[#0E1A12] border border-[#2E6B3E]/30 rounded-2xl p-8 shadow-xl text-center">
-          <div className="text-forest-accent text-xl font-bold tracking-widest mb-6">VORA ADMIN</div>
+          <div className="text-forest-accent text-xl font-bold tracking-widest mb-6">INDEX ADMIN</div>
           <h2 className="text-xl font-semibold mb-4 text-[#E8F0EC]">Enter Admin Password</h2>
           
           <form method="GET" action="/admin" className="flex flex-col gap-4">

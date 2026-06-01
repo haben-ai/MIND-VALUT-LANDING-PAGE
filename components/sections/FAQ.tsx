@@ -6,24 +6,24 @@ import { Accordion } from "../ui/Accordion";
 
 const FAQ_ITEMS = [
   {
-    question: "Which platforms does Vora support?",
+    question: "Which platforms does Index support?",
     answer:
-      "Vora currently supports Instagram (Reels, Posts, Carousels), TikTok, YouTube and YouTube Shorts, Reddit, X/Twitter, and LinkedIn. More platforms are added regularly.",
+      "Index currently supports Instagram (Reels, Posts, Carousels), TikTok, YouTube and YouTube Shorts, Reddit, X/Twitter, and LinkedIn. More platforms are added regularly.",
   },
   {
-    question: "Is Vora free?",
+    question: "Is Index free?",
     answer:
-      "Vora is completely free during the beta period. When we launch publicly, there will be a generous free tier and a Pro plan at $12/month.",
+      "Index is completely free during the beta period. When we launch publicly, there will be a generous free tier and a Pro plan at $12/month.",
   },
   {
     question: "How does saving work?",
     answer:
-      "On Android and iOS, Vora appears in your phone's share sheet. When you tap Share in any app and select Vora, the content is saved instantly with its thumbnail, title, and metadata.",
+      "On Android and iOS, Index appears in your phone's share sheet. When you tap Share in any app and select Index, the content is saved instantly with its thumbnail, title, and metadata.",
   },
   {
     question: "What about Pocket shutting down?",
     answer:
-      "We know the pain. Pocket's shutdown left millions of users without a home for their saved content. Vora is built for the way people consume content in 2026 — social media first, with AI intelligence coming in V2.",
+      "We know the pain. Pocket's shutdown left millions of users without a home for their saved content. Index is built for the way people consume content in 2026 — social media first, with AI intelligence coming in V2.",
   },
   {
     question: "Is my data private?",

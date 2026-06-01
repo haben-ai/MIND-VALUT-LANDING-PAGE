@@ -19,7 +19,7 @@ const FEATURES = [
   {
     icon: Zap,
     title: "One-tap saving",
-    body: "Share from Instagram, TikTok, YouTube, Reddit or X. Vora appears in your share sheet and does the rest instantly.",
+    body: "Share from Instagram, TikTok, YouTube, Reddit or X. Index appears in your share sheet and does the rest instantly.",
     badge: null,
   },
   {
@@ -124,7 +124,7 @@ export const Features: React.FC = () => {
                 Coming in V2: Ask your library
               </h3>
               <p className="text-sm md:text-base text-forest-text-secondary leading-relaxed max-w-lg mx-auto lg:mx-0">
-                Instead of searching through files, simply ask Vora anything about what you saved. Get
+                Instead of searching through files, simply ask Index anything about what you saved. Get
                 summaries, translations, code snippets, and key citations drawn instantly across your
                 entire inbox repository.
               </p>
@@ -138,7 +138,7 @@ export const Features: React.FC = () => {
                   <span className="h-2 w-2 rounded-full bg-forest-accent" />
                 </div>
                 <span className="text-[10px] font-bold text-forest-text-primary tracking-wide">
-                  Vora AI Assistant
+                  Index AI Assistant
                 </span>
               </div>
 
@@ -176,7 +176,7 @@ export const Features: React.FC = () => {
                   </ul>
                 </div>
                 <span className="text-[8px] text-forest-text-muted ml-1.5 flex items-center gap-1">
-                  Vora AI · Just now
+                  Index AI · Just now
                 </span>
               </div>
             </div>

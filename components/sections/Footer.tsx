@@ -23,14 +23,17 @@ export const Footer: React.FC = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="3.5"
+                strokeWidth="2.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <path d="M4 4.5l8 14 8-14" />
+                <rect x="4" y="4" width="16" height="16" rx="2" />
+                <path d="M9 9h6" />
+                <path d="M9 13h6" />
+                <path d="M9 17h4" />
               </svg>
-              <span className="text-lg font-bold tracking-[0.1em] text-forest-text-primary">
-                VORA
+              <span className="text-lg font-bold tracking-[0.1em] text-forest-text-primary uppercase">
+                Index
               </span>
             </div>
             <p className="text-xs text-forest-text-muted">Your social memory</p>
@@ -68,7 +71,7 @@ export const Footer: React.FC = () => {
         {/* Bottom strip */}
         <ScrollAnimate delay={0.1} className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
           <div className="text-xs text-forest-text-muted/70 font-normal">
-            &copy; 2026 Vora. All rights reserved.
+            &copy; 2026 Index. All rights reserved.
           </div>
           <div className="text-xs text-forest-text-muted/50 font-normal">
             Designed for Forest Intelligence
