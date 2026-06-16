@@ -19,10 +19,10 @@ export default async function AdminPage({ searchParams }: AdminPageProps) {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-[#0A1208] text-[#E8F0EC] flex flex-col items-center justify-center p-6 font-sans">
-        <div className="max-w-md w-full bg-[#0E1A12] border border-[#2E6B3E]/30 rounded-2xl p-8 shadow-xl text-center">
+      <div className="min-h-screen bg-[#060C02] text-[#EDF7E3] flex flex-col items-center justify-center p-6 font-sans">
+        <div className="max-w-md w-full bg-[#0E1A06] border border-[#294B0F]/30 rounded-2xl p-8 shadow-xl text-center">
           <div className="text-forest-accent text-xl font-bold tracking-widest mb-6">INDEX ADMIN</div>
-          <h2 className="text-xl font-semibold mb-4 text-[#E8F0EC]">Enter Admin Password</h2>
+          <h2 className="text-xl font-semibold mb-4 text-[#EDF7E3]">Enter Admin Password</h2>
           
           <form method="GET" action="/admin" className="flex flex-col gap-4">
             <input
@@ -30,17 +30,17 @@ export default async function AdminPage({ searchParams }: AdminPageProps) {
               name="password"
               placeholder="Admin password"
               required
-              className="h-12 bg-[#142B1A] border border-[#2E6B3E]/40 rounded-xl px-4 text-[#E8F0EC] placeholder-[#7A9482] focus:outline-none focus:border-[#3D9970]"
+              className="h-12 bg-[#142B09] border border-[#294B0F]/40 rounded-xl px-4 text-[#EDF7E3] placeholder-[#708A58] focus:outline-none focus:border-[#A3FF00]"
             />
             <button
               type="submit"
-              className="h-12 bg-[#3D9970] text-white font-semibold rounded-xl hover:bg-[#5AB88A] transition-colors"
+              className="h-12 bg-[#A3FF00] text-[#060C02] font-semibold rounded-xl hover:bg-[#CCFF00] transition-colors"
             >
               Authenticate
             </button>
           </form>
           
-          <p className="text-xs text-[#7A9482] mt-6">
+          <p className="text-xs text-[#708A58] mt-6">
             Authentication is verified securely on the server-side.
           </p>
         </div>

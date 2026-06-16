@@ -77,13 +77,13 @@ export const Platforms: React.FC = () => {
       id="platforms"
       className="py-24 relative z-10 overflow-hidden"
       style={{
-        background: "radial-gradient(ellipse 100% 60% at 50% 50%, rgba(34, 197, 94, 0.04) 0%, transparent 70%), #0A1208",
+        background: "radial-gradient(ellipse 100% 60% at 50% 50%, rgba(163, 255, 0, 0.03) 0%, transparent 70%), #060C02",
       }}
     >
       <div className="max-w-[1200px] w-full mx-auto px-6 md:px-12">
         <ScrollAnimate className="flex flex-col items-center text-center mb-16">
           {/* Neon pill label */}
-          <div className="inline-block text-[11px] font-bold tracking-[0.15em] text-[#22C55E] bg-[rgba(34,197,94,0.08)] border border-[rgba(34,197,94,0.3)] px-3 py-1 rounded-full mb-4">
+          <div className="inline-block text-[11px] font-bold tracking-[0.15em] text-[#A3FF00] bg-[rgba(163,255,0,0.06)] border border-[rgba(163,255,0,0.25)] px-3 py-1 rounded-full mb-4">
             6 PLATFORMS · MORE COMING
           </div>
 
@@ -92,7 +92,7 @@ export const Platforms: React.FC = () => {
             <span
               className="bg-clip-text text-transparent"
               style={{
-                backgroundImage: "linear-gradient(135deg, #22C55E, #4ADE80, #86EFAC)",
+                backgroundImage: "linear-gradient(135deg, #A3FF00, #CCFF00, #E6FF99)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
@@ -114,21 +114,21 @@ export const Platforms: React.FC = () => {
                   onMouseLeave={() => setHoveredIdx(null)}
                   className="rounded-2xl p-[28px_24px] text-center flex flex-col items-center justify-center select-none cursor-pointer h-full"
                   style={{
-                    backgroundColor: "#F0FFF4",
-                    border: "1.5px solid #22C55E",
+                    backgroundColor: "#F6FFE5",
+                    border: "1.5px solid #62B300",
                     transform: isHovered ? "translateY(-6px) scale(1.02)" : "none",
                     boxShadow: isHovered
                       ? `
-                        0 0 0 1.5px #22C55E,
-                        0 0 40px rgba(34, 197, 94, 0.35),
-                        0 0 80px rgba(34, 197, 94, 0.15),
+                        0 0 0 1.5px #A3FF00,
+                        0 0 40px rgba(163, 255, 0, 0.3),
+                        0 0 80px rgba(163, 255, 0, 0.12),
                         0 20px 60px rgba(0, 0, 0, 0.4),
                         inset 0 1px 0 rgba(255, 255, 255, 1)
                       `
                       : `
-                        0 0 0 1px rgba(34, 197, 94, 0.3),
-                        0 0 20px rgba(34, 197, 94, 0.15),
-                        0 0 60px rgba(34, 197, 94, 0.08),
+                        0 0 0 1px rgba(98, 179, 0, 0.3),
+                        0 0 20px rgba(163, 255, 0, 0.12),
+                        0 0 60px rgba(163, 255, 0, 0.06),
                         0 8px 32px rgba(0, 0, 0, 0.3),
                         inset 0 1px 0 rgba(255, 255, 255, 0.9)
                       `,
@@ -137,9 +137,9 @@ export const Platforms: React.FC = () => {
                 >
                   {/* Icon Circle */}
                   <div
-                    className="h-[52px] w-[52px] rounded-xl bg-white border-[1.5px] border-[rgba(34,197,94,0.4)] flex items-center justify-center mb-5 transition-all duration-300"
+                    className="h-[52px] w-[52px] rounded-xl bg-white border-[1.5px] border-[rgba(98,179,0,0.35)] flex items-center justify-center mb-5 transition-all duration-300"
                     style={{
-                      boxShadow: "0 2px 8px rgba(34, 197, 94, 0.2)",
+                      boxShadow: "0 2px 8px rgba(163, 255, 0, 0.15)",
                       color: platform.id === "tiktok" && platform.brandColor ? platform.brandColor : platform.color,
                       backgroundColor: platform.id === "tiktok" ? "#010101" : "white",
                     }}
@@ -164,7 +164,7 @@ export const Platforms: React.FC = () => {
 
         {/* Bottom footer text */}
         <ScrollAnimate delay={0.3} className="text-center mt-12">
-          <span className="text-sm font-semibold text-[#22C55E] bg-[rgba(34,197,94,0.06)] border border-[rgba(34,197,94,0.2)] px-4 py-1.5 rounded-full inline-block">
+          <span className="text-sm font-semibold text-[#A3FF00] bg-[rgba(163,255,0,0.06)] border border-[rgba(163,255,0,0.2)] px-4 py-1.5 rounded-full inline-block">
             More platforms coming soon
           </span>
         </ScrollAnimate>

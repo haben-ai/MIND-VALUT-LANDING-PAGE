@@ -20,9 +20,9 @@ const config: Config = {
           "surface-3": "var(--surface-color-3)", // Elevated elements
           border: "var(--border-color)",      // Borders, dividers
           "border-subtle": "var(--border-subtle-color)", // Very subtle borders
-          accent: "#3D9970",                  // Original Index green
-          "accent-light": "#5AB88A",          // Original Index green hover
-          highlight: "#C8E6C9",               // Original Index green highlight
+          accent: "#A3FF00",                  // Original Index green
+          "accent-light": "#CCFF00",          // Original Index green hover
+          highlight: "#DFFF80",               // Original Index green highlight
           // Text values
           "text-primary": "var(--text-primary-color)",
           "text-secondary": "var(--text-secondary-color)",
@@ -30,18 +30,18 @@ const config: Config = {
         },
       },
       backgroundImage: {
-        "gradient-hero": "linear-gradient(180deg, #0A1208 0%, #0E1A12 40%, #0A1208 100%)",
-        "gradient-radial-glow": "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(61,153,112,0.2) 0%, transparent 70%)",
-        "gradient-cursor-glow": "radial-gradient(300px circle at var(--x, 0px) var(--y, 0px), rgba(61,153,112,0.06), transparent 70%)",
+        "gradient-hero": "linear-gradient(180deg, #060C02 0%, #0E1A06 40%, #060C02 100%)",
+        "gradient-radial-glow": "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(163,255,0,0.15) 0%, transparent 70%)",
+        "gradient-cursor-glow": "radial-gradient(300px circle at var(--x, 0px) var(--y, 0px), rgba(163,255,0,0.045), transparent 70%)",
       },
       boxShadow: {
         // Visual Effect 5: Glow button shadow
-        "glow-btn": "0 0 20px rgba(61,153,112,0.4), 0 0 60px rgba(61,153,112,0.15), inset 0 1px 0 rgba(255,255,255,0.1)",
-        "glow-btn-hover": "0 0 30px rgba(61,153,112,0.6), 0 0 80px rgba(61,153,112,0.25), inset 0 1px 0 rgba(255,255,255,0.15)",
+        "glow-btn": "0 0 20px rgba(163,255,0,0.35), 0 0 60px rgba(163,255,0,0.12), inset 0 1px 0 rgba(255,255,255,0.1)",
+        "glow-btn-hover": "0 0 30px rgba(163,255,0,0.5), 0 0 80px rgba(163,255,0,0.2), inset 0 1px 0 rgba(255,255,255,0.15)",
         // Visual Effect 4: Glassmorphic shadow
-        "glass-card": "0 0 0 0.5px rgba(46,107,62,0.3), 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(90,184,138,0.1)",
+        "glass-card": "0 0 0 0.5px rgba(41,75,15,0.3), 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(163,255,0,0.08)",
         // Phone shadow
-        "phone-mock": "0 0 0 1px rgba(46,107,62,0.2), 0 40px 80px rgba(0,0,0,0.6), 0 0 120px rgba(61,153,112,0.1)",
+        "phone-mock": "0 0 0 1px rgba(41,75,15,0.2), 0 40px 80px rgba(0,0,0,0.6), 0 0 120px rgba(163,255,0,0.08)",
       },
       animation: {
         "spin-slow": "spin 20s linear infinite",

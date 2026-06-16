@@ -62,7 +62,7 @@ export const ShareMockup: React.FC = () => {
             <motion.div
               animate={{ scale: [1, 1.1, 1] }}
               transition={{ repeat: Infinity, duration: 2 }}
-              className="w-10 h-10 rounded-full bg-forest-accent border border-forest-accent-light flex items-center justify-center shadow-[0_0_15px_rgba(61,153,112,0.6)] cursor-pointer"
+              className="w-10 h-10 rounded-full bg-forest-accent border border-forest-accent-light flex items-center justify-center shadow-[0_0_15px_rgba(163,255,0,0.55)] cursor-pointer"
             >
               <svg className="w-5.5 h-5.5 text-white" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path

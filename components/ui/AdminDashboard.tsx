@@ -73,10 +73,10 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-[#0A1208] text-[#E8F0EC] p-6 md:p-12 font-sans">
+    <div className="min-h-screen bg-[#060C02] text-[#EDF7E3] p-6 md:p-12 font-sans">
       <div className="max-w-[1200px] mx-auto flex flex-col gap-8">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#2E6B3E]/20 pb-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#294B0F]/20 pb-6">
           <div>
             <div className="text-forest-accent text-xs font-bold tracking-widest uppercase mb-1.5">
               Waitlist Control Console
@@ -118,31 +118,31 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
         {/* Stats Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-[#0E1A12] border border-[#2E6B3E]/30 rounded-2xl p-6 shadow-md">
-            <div className="text-sm font-semibold tracking-wider text-[#7A9482] uppercase mb-2">
+          <div className="bg-[#0E1A06] border border-[#294B0F]/30 rounded-2xl p-6 shadow-md">
+            <div className="text-sm font-semibold tracking-wider text-[#708A58] uppercase mb-2">
               Total Signups
             </div>
             <div className="text-4xl md:text-5xl font-black text-forest-accent tracking-tighter">
               {totalSignups.toLocaleString()}
             </div>
-            <p className="text-xs text-[#7A9482] mt-3">
+            <p className="text-xs text-[#708A58] mt-3">
               Total users who joined waitlist across landing page channels.
             </p>
           </div>
 
-          <div className="bg-[#0E1A12] border border-[#2E6B3E]/30 rounded-2xl p-6 shadow-md flex flex-col justify-between">
+          <div className="bg-[#0E1A06] border border-[#294B0F]/30 rounded-2xl p-6 shadow-md flex flex-col justify-between">
             <div>
-              <div className="text-sm font-semibold tracking-wider text-[#7A9482] uppercase mb-2">
+              <div className="text-sm font-semibold tracking-wider text-[#708A58] uppercase mb-2">
                 Export Waitlist
               </div>
-              <p className="text-xs text-[#7A9482]">
+              <p className="text-xs text-[#708A58]">
                 Generate and download the complete list of signed up users in a spreadsheet-ready
                 CSV format.
               </p>
             </div>
             <Button
               onClick={handleDownloadCsv}
-              className="mt-4 bg-[#3D9970] text-white hover:bg-[#5AB88A] gap-2 h-11"
+              className="mt-4 bg-[#A3FF00] text-[#060C02] hover:bg-[#CCFF00] gap-2 h-11"
             >
               <Download className="w-4 h-4" />
               Download CSV
@@ -151,12 +151,12 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
         </div>
 
         {/* Table Control and Search */}
-        <div className="bg-[#0E1A12] border border-[#2E6B3E]/30 rounded-2xl p-6 shadow-md flex flex-col gap-6">
+        <div className="bg-[#0E1A06] border border-[#294B0F]/30 rounded-2xl p-6 shadow-md flex flex-col gap-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <h2 className="text-lg font-semibold text-[#E8F0EC]">Recent Registrations</h2>
+            <h2 className="text-lg font-semibold text-[#EDF7E3]">Recent Registrations</h2>
             {/* Search */}
-            <div className="relative max-w-xs w-full bg-forest-base border border-[#2E6B3E]/30 rounded-xl flex items-center p-1.5 px-3">
-              <Search className="w-4 h-4 text-[#7A9482] mr-2 shrink-0" />
+            <div className="relative max-w-xs w-full bg-forest-base border border-[#294B0F]/30 rounded-xl flex items-center p-1.5 px-3">
+              <Search className="w-4 h-4 text-[#708A58] mr-2 shrink-0" />
               <input
                 type="text"
                 placeholder="Search by name or email..."
@@ -165,15 +165,15 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                   setFilterText(e.target.value);
                   setCurrentPage(1);
                 }}
-                className="bg-transparent border-none text-sm text-[#E8F0EC] placeholder-[#7A9482] focus:outline-none w-full"
+                className="bg-transparent border-none text-sm text-[#EDF7E3] placeholder-[#708A58] focus:outline-none w-full"
               />
             </div>
           </div>
 
           {/* Table */}
-          <div className="overflow-x-auto rounded-xl border border-[#2E6B3E]/10">
-            <table className="min-w-full divide-y divide-[#2E6B3E]/20 text-left text-sm">
-              <thead className="bg-[#142B1A] text-[#7A9482] uppercase text-[10px] tracking-wider font-semibold">
+          <div className="overflow-x-auto rounded-xl border border-[#294B0F]/10">
+            <table className="min-w-full divide-y divide-[#294B0F]/20 text-left text-sm">
+              <thead className="bg-[#142B09] text-[#708A58] uppercase text-[10px] tracking-wider font-semibold">
                 <tr>
                   <th className="p-4 px-6">Pos</th>
                   <th className="p-4 px-6">First Name</th>
@@ -181,23 +181,23 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                   <th className="p-4 px-6">Signed Up At</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#2E6B3E]/10 bg-[#0E1A12]">
+              <tbody className="divide-y divide-[#294B0F]/10 bg-[#0E1A06]">
                 {paginatedSignups.length > 0 ? (
                   paginatedSignups.map((signup) => (
-                    <tr key={signup.position} className="hover:bg-[#142B1A]/40 transition-colors">
+                    <tr key={signup.position} className="hover:bg-[#142B09]/40 transition-colors">
                       <td className="p-4 px-6 font-bold text-forest-accent">
                         #{signup.position.toLocaleString()}
                       </td>
-                      <td className="p-4 px-6 font-medium text-[#E8F0EC]">{signup.firstName}</td>
-                      <td className="p-4 px-6 text-[#A8BFB0] font-mono">{signup.email}</td>
-                      <td className="p-4 px-6 text-[#7A9482]">
+                      <td className="p-4 px-6 font-medium text-[#EDF7E3]">{signup.firstName}</td>
+                      <td className="p-4 px-6 text-[#A5C28C] font-mono">{signup.email}</td>
+                      <td className="p-4 px-6 text-[#708A58]">
                         {new Date(signup.createdAt).toLocaleString()}
                       </td>
                     </tr>
                   ))
                 ) : (
                   <tr>
-                    <td colSpan={4} className="p-8 text-center text-[#7A9482]">
+                    <td colSpan={4} className="p-8 text-center text-[#708A58]">
                       No matching records found.
                     </td>
                   </tr>
@@ -208,14 +208,14 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
           {/* Pagination Controls */}
           {filteredSignups.length > 0 && (
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#2E6B3E]/10 pt-6 mt-2">
-              <div className="text-xs text-[#7A9482]">
-                Showing <span className="font-semibold text-[#E8F0EC]">{startIndex + 1}</span> to{" "}
-                <span className="font-semibold text-[#E8F0EC]">{endIndex}</span> of{" "}
-                <span className="font-semibold text-[#E8F0EC]">{filteredSignups.length}</span>{" "}
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#294B0F]/10 pt-6 mt-2">
+              <div className="text-xs text-[#708A58]">
+                Showing <span className="font-semibold text-[#EDF7E3]">{startIndex + 1}</span> to{" "}
+                <span className="font-semibold text-[#EDF7E3]">{endIndex}</span> of{" "}
+                <span className="font-semibold text-[#EDF7E3]">{filteredSignups.length}</span>{" "}
                 registrations
                 {filteredSignups.length < signups.length && (
-                  <span className="text-[#3D9970]"> (filtered from {signups.length} total)</span>
+                  <span className="text-[#A3FF00]"> (filtered from {signups.length} total)</span>
                 )}
               </div>
 
@@ -223,7 +223,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                 <button
                   onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
                   disabled={activePage === 1}
-                  className="h-9 px-3.5 rounded-xl border border-[#2E6B3E]/30 bg-transparent text-xs font-semibold text-[#E8F0EC] transition-all hover:bg-[#142B1A]/40 disabled:opacity-40 disabled:hover:bg-transparent disabled:cursor-not-allowed select-none active:scale-[0.98]"
+                  className="h-9 px-3.5 rounded-xl border border-[#294B0F]/30 bg-transparent text-xs font-semibold text-[#EDF7E3] transition-all hover:bg-[#142B09]/40 disabled:opacity-40 disabled:hover:bg-transparent disabled:cursor-not-allowed select-none active:scale-[0.98]"
                 >
                   Previous
                 </button>
@@ -235,8 +235,8 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                       onClick={() => setCurrentPage(pageNum)}
                       className={`h-9 w-9 rounded-xl text-xs font-semibold transition-all select-none active:scale-[0.95] ${
                         activePage === pageNum
-                          ? "bg-[#3D9970] text-white shadow-md shadow-[#3D9970]/10"
-                          : "bg-transparent border border-[#2E6B3E]/20 text-[#A8BFB0] hover:border-[#3D9970] hover:text-[#E8F0EC]"
+                          ? "bg-[#A3FF00] text-[#060C02] shadow-md shadow-[#A3FF00]/10"
+                          : "bg-transparent border border-[#294B0F]/20 text-[#A5C28C] hover:border-[#A3FF00] hover:text-[#EDF7E3]"
                       }`}
                     >
                       {pageNum}
@@ -247,7 +247,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                 <button
                   onClick={() => setCurrentPage((prev) => Math.min(totalPages, prev + 1))}
                   disabled={activePage === totalPages}
-                  className="h-9 px-3.5 rounded-xl border border-[#2E6B3E]/30 bg-transparent text-xs font-semibold text-[#E8F0EC] transition-all hover:bg-[#142B1A]/40 disabled:opacity-40 disabled:hover:bg-transparent disabled:cursor-not-allowed select-none active:scale-[0.98]"
+                  className="h-9 px-3.5 rounded-xl border border-[#294B0F]/30 bg-transparent text-xs font-semibold text-[#EDF7E3] transition-all hover:bg-[#142B09]/40 disabled:opacity-40 disabled:hover:bg-transparent disabled:cursor-not-allowed select-none active:scale-[0.98]"
                 >
                   Next
                 </button>
