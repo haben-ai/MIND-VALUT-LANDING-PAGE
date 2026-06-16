@@ -119,43 +119,43 @@ export async function POST(request: Request) {
         <meta charset="utf-8">
         <title>You're #${position} on the Index waitlist</title>
       </head>
-      <body style="background-color: #0A1208; color: #E8F0EC; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 40px 20px; text-align: center;">
-        <div style="max-w: 600px; margin: 0 auto; background-color: #0E1A12; border: 1px solid #1A3020; border-radius: 16px; padding: 40px; text-align: left;">
+      <body style="background-color: #050B14; color: #F8FAFC; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 40px 20px; text-align: center;">
+        <div style="max-w: 600px; margin: 0 auto; background-color: #091122; border: 1px solid #1E3A6F; border-radius: 16px; padding: 40px; text-align: left;">
           
           <!-- Header -->
           <div style="text-align: center; margin-bottom: 40px;">
-            <div style="font-size: 24px; font-weight: bold; letter-spacing: 0.1em; color: #3D9970; margin-bottom: 4px;">INDEX</div>
-            <div style="font-size: 12px; color: #7A9482; text-transform: uppercase; letter-spacing: 0.08em;">Your social memory</div>
+            <div style="font-size: 24px; font-weight: bold; letter-spacing: 0.1em; color: #10B981; margin-bottom: 4px;">INDEX</div>
+            <div style="font-size: 12px; color: #64748B; text-transform: uppercase; letter-spacing: 0.08em;">Your social memory</div>
           </div>
           
           <!-- Body -->
-          <div style="font-size: 16px; line-height: 1.6; color: #A8BFB0; margin-bottom: 32px;">
-            <p style="color: #E8F0EC; font-size: 18px; font-weight: 500; margin-top: 0;">Hey ${cleanFirstName},</p>
+          <div style="font-size: 16px; line-height: 1.6; color: #94A3B8; margin-bottom: 32px;">
+            <p style="color: #F8FAFC; font-size: 18px; font-weight: 500; margin-top: 0;">Hey ${cleanFirstName},</p>
             <p>You're officially on the Index waitlist. We are preparing to open early access seats soon.</p>
           </div>
           
           <!-- Position Box -->
-          <div style="background-color: #142B1A; border: 1px solid #2E6B3E; border-radius: 12px; padding: 32px; text-align: center; margin-bottom: 40px;">
-            <div style="font-size: 72px; font-weight: 700; color: #3D9970; line-height: 1; margin-bottom: 8px;">#${position}</div>
-            <div style="font-size: 14px; color: #7A9482; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500;">Your position in queue</div>
+          <div style="background-color: #11203E; border: 1px solid #1E3A6F; border-radius: 12px; padding: 32px; text-align: center; margin-bottom: 40px;">
+            <div style="font-size: 72px; font-weight: 700; color: #10B981; line-height: 1; margin-bottom: 8px;">#${position}</div>
+            <div style="font-size: 14px; color: #64748B; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500;">Your position in queue</div>
           </div>
           
           <!-- Next Steps -->
-          <div style="font-size: 15px; line-height: 1.6; color: #A8BFB0; margin-bottom: 40px;">
+          <div style="font-size: 15px; line-height: 1.6; color: #94A3B8; margin-bottom: 40px;">
             <p>We're in final testing. You'll receive another email the moment your spot opens. We promise never to send you spam or advertisements.</p>
           </div>
           
           <!-- Twitter CTA Button -->
           <div style="text-align: center; margin-bottom: 40px;">
-            <a href="${twitterIntent}" target="_blank" style="background-color: #3D9970; color: #FFFFFF; font-size: 15px; font-weight: 600; text-decoration: none; padding: 14px 28px; border-radius: 8px; display: inline-block; box-shadow: 0 4px 12px rgba(61, 153, 112, 0.3);">
+            <a href="${twitterIntent}" target="_blank" style="background-color: #10B981; color: #050B14; font-size: 15px; font-weight: 600; text-decoration: none; padding: 14px 28px; border-radius: 8px; display: inline-block; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
               Tell a friend →
             </a>
           </div>
           
           <!-- Footer -->
-          <div style="border-t: 1px solid #1A3020; pt: 20px; text-align: center; font-size: 12px; color: #7A9482;">
+          <div style="border-t: 1px solid #1E3A6F; pt: 20px; text-align: center; font-size: 12px; color: #64748B;">
             <p style="margin: 0 0 8px 0;">Index &middot; Your social memory</p>
-            <p style="margin: 0;"><a href="#" style="color: #7A9482; text-decoration: underline;">Unsubscribe</a></p>
+            <p style="margin: 0;"><a href="#" style="color: #64748B; text-decoration: underline;">Unsubscribe</a></p>
           </div>
           
         </div>

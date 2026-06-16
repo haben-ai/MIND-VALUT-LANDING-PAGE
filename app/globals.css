@@ -23,16 +23,16 @@
     color-scheme: dark;
     --font-sans: var(--font-plus-jakarta), system-ui, sans-serif;
     
-    /* Dark Mode (Yellowish-Green / Lime Palette) */
-    --base-color: #060C02;
-    --surface-color: #0E1A06;
-    --surface-color-2: #142B09;
-    --surface-color-3: #1F3F10;
-    --border-color: #294B0F;
-    --border-subtle-color: #172B0B;
-    --text-primary-color: #EDF7E3;
-    --text-secondary-color: #A5C28C;
-    --text-muted-color: #708A58;
+    /* Dark Mode (Premium Very Dark Blue Palette) */
+    --base-color: #050B14;
+    --surface-color: #091122;
+    --surface-color-2: #11203E;
+    --surface-color-3: #1B2F55;
+    --border-color: #1E3A6F;
+    --border-subtle-color: #0F2244;
+    --text-primary-color: #F8FAFC;
+    --text-secondary-color: #94A3B8;
+    --text-muted-color: #64748B;
   }
 
   body {
@@ -45,7 +45,7 @@
 
   /* Selection styling */
   ::selection {
-    background-color: rgba(163, 255, 0, 0.25);
+    background-color: rgba(16, 185, 129, 0.25);
     color: var(--text-primary-color);
   }
 
@@ -97,7 +97,7 @@
     left: 50%;
     width: 0;
     height: 2px;
-    background-color: #A3FF00;
+    background-color: #10B981;
     transition: width 0.3s ease, left 0.3s ease;
     transform: translateX(-50%);
     transform-origin: center;
@@ -148,10 +148,10 @@
     height: 1px;
     background: conic-gradient(
       from 0deg,
-      #A3FF00 0%,
-      #CCFF00 25%,
-      #1F3F10 50%,
-      #A3FF00 100%
+      #10B981 0%,
+      #34D399 25%,
+      #1B2F55 50%,
+      #10B981 100%
     );
     animation: rotate-conic 8s linear infinite;
     z-index: 10;
@@ -163,15 +163,15 @@
     height: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #060C02;
+    background: #050B14;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1F3F10;
-    border: 2px solid #060C02;
+    background: #1E3A6F;
+    border: 2px solid #050B14;
     border-radius: 5px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #294B0F;
+    background: #1B2F55;
   }
 }
 
@@ -245,10 +245,10 @@
     height: 200%;
     background: conic-gradient(
       from 0deg,
-      #A3FF00 0%,
-      #CCFF00 25%,
-      #1F3F10 50%,
-      #A3FF00 100%
+      #10B981 0%,
+      #34D399 25%,
+      #1B2F55 50%,
+      #10B981 100%
     );
     animation: rotate-conic 4s linear infinite;
     z-index: 0;

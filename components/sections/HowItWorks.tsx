@@ -31,13 +31,13 @@ const STEPS = [
 
 const PhoneBezel: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <div className="relative w-[220px] h-[380px] rounded-[36px] bg-[#060C02] border-[6px] border-[#1F3F10] shadow-[0_20px_50px_rgba(0,0,0,0.6),0_0_30px_rgba(163,255,0,0.12)] flex flex-col overflow-hidden select-none shrink-0 z-10 transition-transform duration-300 hover:scale-[1.03]">
+    <div className="relative w-[220px] h-[380px] rounded-[36px] bg-[#050B14] border-[6px] border-[#11203E] shadow-[0_20px_50px_rgba(0,0,0,0.6),0_0_30px_rgba(16,185,129,0.12)] flex flex-col overflow-hidden select-none shrink-0 z-10 transition-transform duration-300 hover:scale-[1.03]">
       {/* Screen Frame Border */}
       <div className="absolute inset-0 border border-forest-accent/20 rounded-[30px] pointer-events-none z-30" />
       
       {/* Notch */}
-      <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-3 bg-[#1F3F10] rounded-full z-30 flex items-center justify-center">
-        <div className="w-1.5 h-1.5 rounded-full bg-[#060C02]/60" />
+      <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-3 bg-[#11203E] rounded-full z-30 flex items-center justify-center">
+        <div className="w-1.5 h-1.5 rounded-full bg-[#050B14]/60" />
       </div>
 
       {/* Screen Inner scaled to fit 270px mockup perfectly inside */}
@@ -102,7 +102,7 @@ export const HowItWorks: React.FC = () => {
                     </div>
 
                     {/* Icon Circle */}
-                    <div className="h-11 w-11 rounded-full bg-forest-accent/10 border border-forest-accent/20 flex items-center justify-center mb-5 shadow-[0_0_12px_rgba(61,153,112,0.1)] group-hover:border-forest-accent/50 transition-all duration-300 relative z-10">
+                    <div className="h-11 w-11 rounded-full bg-forest-accent/10 border border-forest-accent/20 flex items-center justify-center mb-5 shadow-[0_0_12px_rgba(16,185,129,0.1)] group-hover:border-forest-accent/50 transition-all duration-300 relative z-10">
                       <Icon className="h-4.5 w-4.5 text-forest-accent-light" />
                     </div>
 
@@ -118,7 +118,7 @@ export const HowItWorks: React.FC = () => {
                   </div>
 
                   {/* Desktop Timeline Node point */}
-                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full border-2 border-forest-accent bg-[#060C02] z-20 hidden md:block transition-all duration-300 group-hover:bg-forest-accent shadow-[0_0_10px_rgba(163,255,0,0.35)]" />
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full border-2 border-forest-accent bg-[#050B14] z-20 hidden md:block transition-all duration-300 group-hover:bg-forest-accent shadow-[0_0_10px_rgba(16,185,129,0.35)]" />
 
                   {/* Left/Right Phone Mockup Box (takes 50% on desktop, centered) */}
                   <div className="w-full md:w-[45%] flex justify-center relative">

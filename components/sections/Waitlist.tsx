@@ -25,13 +25,13 @@ export const Waitlist: React.FC = () => {
     >
       {/* Background Visual Effects */}
       {/* Strong radial glow from center */}
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(61,153,112,0.18)_0%,transparent_65%)] pointer-events-none" />
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.18)_0%,transparent_65%)] pointer-events-none" />
 
       {/* Grid Pattern (Same as Hero) */}
       <div
         className="absolute inset-0 z-0 pointer-events-none opacity-60"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='1' cy='1' r='0.8' fill='%233D9970' fill-opacity='0.05'/%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='1' cy='1' r='0.8' fill='%2310B981' fill-opacity='0.05'/%3E%3C/svg%3E")`,
           maskImage: "radial-gradient(circle at center, black 0%, transparent 100%)",
           WebkitMaskImage: "radial-gradient(circle at center, black 0%, transparent 100%)",
         }}

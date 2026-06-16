@@ -78,13 +78,13 @@ export const Hero: React.FC<HeroProps> = ({ waitlistCount = 109 }) => {
       <div
         className="absolute inset-0 z-0 bg-gradient-radial-glow pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(61,153,112,0.3) 0%, rgba(61,153,112,0.05) 45%, transparent 70%)",
+          background: "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(16,185,129,0.3) 0%, rgba(16,185,129,0.05) 45%, transparent 70%)",
         }}
       />
       <div
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='1' cy='1' r='0.8' fill='%233D9970' fill-opacity='0.04'/%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='1' cy='1' r='0.8' fill='%2310B981' fill-opacity='0.04'/%3E%3C/svg%3E")`,
           maskImage: "radial-gradient(ellipse 60% 50% at 50% 0%, black 0%, transparent 100%)",
           WebkitMaskImage: "radial-gradient(ellipse 60% 50% at 50% 0%, black 0%, transparent 100%)",
         }}
@@ -93,7 +93,7 @@ export const Hero: React.FC<HeroProps> = ({ waitlistCount = 109 }) => {
       {/* LAYER 2: ContentRain covers globally in layout, so we do not render abstract particles here */}
 
       {/* LAYER 3: Hero Content */}
-      <div className="relative z-10 max-w-[1200px] w-full mx-auto px-6 md:px-12 flex flex-col xl:flex-row items-center gap-16">
+      <div className="relative z-10 max-w-[1200px] w-full mx-auto px-6 md:px-12 flex flex-col-reverse xl:flex-row items-center gap-16">
         <div className="flex-1 flex flex-col items-center xl:items-start text-center xl:text-left">
           {/* Announcement badge */}
           <motion.div
@@ -121,7 +121,7 @@ export const Hero: React.FC<HeroProps> = ({ waitlistCount = 109 }) => {
             </span>
             <span
               className="block overflow-hidden bg-gradient-to-r from-forest-accent via-forest-accent-light to-forest-highlight bg-clip-text text-transparent pb-3"
-              style={{ filter: "drop-shadow(0 0 20px rgba(61,153,112,0.3))" }}
+              style={{ filter: "drop-shadow(0 0 20px rgba(16,185,129,0.3))" }}
             >
               {line2Words.map((word, idx) => (
                 <motion.span key={idx} variants={wordVariant} className="inline-block mr-[0.2em]">

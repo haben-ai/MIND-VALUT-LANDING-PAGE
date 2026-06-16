@@ -68,7 +68,7 @@ export const ParticleField: React.FC = () => {
                 height: el.size,
                 top: `${el.top}%`,
                 left: `${el.left}%`,
-                boxShadow: "0 0 10px rgba(61,153,112,0.5)",
+                boxShadow: "0 0 10px rgba(16, 185, 129, 0.5)",
               }}
             />
           );
@@ -94,7 +94,7 @@ export const ParticleField: React.FC = () => {
                 height: el.size,
                 top: `${el.top}%`,
                 left: `${el.left}%`,
-                boxShadow: "0 0 6px rgba(61,153,112,0.6)",
+                boxShadow: "0 0 6px rgba(16, 185, 129, 0.6)",
               }}
             />
           );

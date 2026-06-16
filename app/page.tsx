@@ -54,7 +54,7 @@ export default function Home() {
       <div
         className="absolute inset-0 z-10 pointer-events-none hidden md:block"
         style={{
-          background: "radial-gradient(600px circle at var(--x, 0px) var(--y, 0px), rgba(163, 255, 0, 0.035), transparent 70%)",
+          background: "radial-gradient(600px circle at var(--x, 0px) var(--y, 0px), rgba(16, 185, 129, 0.035), transparent 70%)",
         }}
         aria-hidden="true"
       />
@@ -71,7 +71,7 @@ export default function Home() {
           <StatsBar waitlistCount={waitlistCount} />
           
           {/* Smooth transition from hero/statsbar to problem */}
-          <div className="h-[120px] w-full bg-gradient-to-b from-[#060C02] to-[#0E1A06] pointer-events-none relative z-0" />
+          <div className="h-[120px] w-full bg-gradient-to-b from-[#050B14] to-[#091122] pointer-events-none relative z-0" />
           
           <Problem />
           <HowItWorks />

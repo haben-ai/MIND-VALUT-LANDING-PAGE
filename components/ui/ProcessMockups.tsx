@@ -62,7 +62,7 @@ export const ShareMockup: React.FC = () => {
             <motion.div
               animate={{ scale: [1, 1.1, 1] }}
               transition={{ repeat: Infinity, duration: 2 }}
-              className="w-10 h-10 rounded-full bg-forest-accent border border-forest-accent-light flex items-center justify-center shadow-[0_0_15px_rgba(163,255,0,0.55)] cursor-pointer"
+              className="w-10 h-10 rounded-full bg-forest-accent border border-forest-accent-light flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.55)] cursor-pointer"
             >
               <svg className="w-5.5 h-5.5 text-white" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -105,7 +105,7 @@ export const SaveMockup: React.FC = () => {
   return (
     <div className="w-full max-w-[270px] h-[330px] rounded-2xl bg-forest-surface border border-forest-border/30 overflow-hidden shadow-2xl flex flex-col justify-between p-3 select-none relative">
       {/* Background radial soft light */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(61,153,112,0.12)_0%,transparent_60%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.12)_0%,transparent_60%)] pointer-events-none" />
 
       {/* Mock Header */}
       <div className="flex items-center justify-between border-b border-forest-border/10 pb-2">

@@ -43,7 +43,7 @@ export const SuccessState: React.FC<SuccessStateProps> = ({
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.1 }}
-        className="w-20 h-20 bg-forest-accent/10 border-2 border-forest-accent rounded-full flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(61,153,112,0.2)]"
+        className="w-20 h-20 bg-forest-accent/10 border-2 border-forest-accent rounded-full flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(16,185,129,0.2)]"
       >
         <CheckCircle2 className="w-9 h-9 text-forest-accent" />
       </motion.div>

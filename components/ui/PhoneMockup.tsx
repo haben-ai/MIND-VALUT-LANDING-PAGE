@@ -45,9 +45,9 @@ export const PhoneMockup: React.FC = () => {
           transform: "perspective(1200px) rotateX(12deg) rotateY(-16deg) rotateZ(2deg)",
           transformStyle: "preserve-3d",
           boxShadow: `
-            0 0 0 1px rgba(61, 153, 112, 0.25),
+            0 0 0 1px rgba(16, 185, 129, 0.25),
             0 25px 60px rgba(0, 0, 0, 0.7),
-            0 0 50px rgba(61, 153, 112, 0.25),
+            0 0 50px rgba(16, 185, 129, 0.25),
             inset 0 1px 0 rgba(255, 255, 255, 0.15)
           `
         }}
